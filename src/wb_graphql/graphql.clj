@@ -6,6 +6,7 @@
             [graphql-clj.validator :as validator]
             [graphql-clj.introspection :as introspection]
             [clojure.core.match :as match]
+            [datomic.api :as d]
             [wb-graphql.db :refer [datomic-conn]]))
 
 (def starter-schema "enum Episode { NEWHOPE, EMPIRE, JEDI }
@@ -33,13 +34,18 @@ type Droid implements Character {
   primaryFunction: String
 }
 
+type Gene {
+  id: String!
+  name: String
+}
+
 type Query {
   hero(episode: Episode): Character
   human(id: String!): Human
   droid(id: String!): Droid
   hello(world: WorldInput): String
   objectList: [Object!]!
-  gene(id: String!): Object
+  gene(id: String!): Gene
 }
 
 type Object {
@@ -148,26 +154,33 @@ schema {
     new-human))
 
 (defn starter-resolver-fn [type-name field-name]
-  (match/match
-   [type-name field-name]
-   ["Query" "hero"] (fn [context parent args]
-                      (get-hero (:episode args)))
-   ["Query" "human"] (fn [context parent args]
-                       (get-human (str (get args "id"))))
-   ["Query" "droid"] (fn [context parent args]
-                       (get-droid (str (get args "id"))))
-   ["Query" "objectList"] (fn [context parent args]
-                            (repeat 3 {:id (java.util.UUID/randomUUID)}))
-   ;; Hacky!!! Should use resolver for interface
-   ["Human" "friends"] (fn [context parent args]
-                         (get-friends parent))
-   ["Droid" "friends"] (fn [context parent args]
-                         (get-friends parent))
-   ["Character" "friends"] (fn [context parent args]
-                             (get-friends parent))
-   ["Mutation" "createHuman"] (fn [context parent args]
-                                (create-human args))
-   :else nil))
+  (let [db (d/db datomic-conn)]
+    (match/match
+     [type-name field-name]
+     ["Query" "hero"] (fn [context parent args]
+                        (get-hero (:episode args)))
+     ["Query" "human"] (fn [context parent args]
+                         (get-human (str (get args "id"))))
+     ["Query" "droid"] (fn [context parent args]
+                         (get-droid (str (get args "id"))))
+     ["Query" "objectList"] (fn [context parent args]
+                              (repeat 3 {:id (java.util.UUID/randomUUID)}))
+     ["Query", "gene"] (fn [context parent args]
+                         (d/entity db [:gene/id (get args "id")]))
+     ;; Hacky!!! Should use resolver for interface
+     ["Human" "friends"] (fn [context parent args]
+                           (get-friends parent))
+     ["Droid" "friends"] (fn [context parent args]
+                           (get-friends parent))
+     ["Character" "friends"] (fn [context parent args]
+                               (get-friends parent))
+     ["Gene" "id"] (fn [context parent args]
+                     (:gene/id parent))
+     ["Gene" "name"] (fn [context parent args]
+                     "aaa")
+     ["Mutation" "createHuman"] (fn [context parent args]
+                                  (create-human args))
+     :else nil)))
 
 (def parsed-schema (parser/parse starter-schema))
 
