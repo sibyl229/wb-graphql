@@ -1,13 +1,14 @@
-(ns graphql-clj-starter.handler
+(ns wb-graphql.handler
   (:require [compojure.core :refer [GET POST defroutes]]
             [compojure.route :as route]
+            [mount.core :as mount]
             [ring.util.response :as response]
             [ring.middleware.json :refer [wrap-json-response]]
             [ring.middleware.json :refer [wrap-json-params]]
             [ring.middleware.cors :refer [wrap-cors]]
             [ring.middleware.defaults :refer :all]
             [cheshire.core :as json]
-            [graphql-clj-starter.graphql :as graphql]))
+            [wb-graphql.graphql :as graphql]))
 
 (defroutes routes
   (GET "/" [] "<h1>Hello World</h1>")
@@ -26,6 +27,12 @@
   (route/resources "/" {:root ""})
   (route/not-found "<h1>Page not found</h1>"))
 
+(defn init []
+  (mount/start))
+
+(defn destroy []
+  (mount/stop))
+
 (def app
   (-> routes
       wrap-json-response
@@ -33,5 +40,3 @@
                  :access-control-allow-methods [:get :put :post :delete])
       (wrap-defaults api-defaults)
       (wrap-json-params)))
-
-

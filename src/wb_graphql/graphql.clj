@@ -1,11 +1,12 @@
-(ns graphql-clj-starter.graphql
+(ns wb-graphql.graphql
   (:require [graphql-clj.parser :as parser]
             [graphql-clj.type :as type]
             [graphql-clj.resolver :as resolver]
             [graphql-clj.executor :as executor]
             [graphql-clj.validator :as validator]
             [graphql-clj.introspection :as introspection]
-            [clojure.core.match :as match]))
+            [clojure.core.match :as match]
+            [wb-graphql.db :refer [datomic-conn]]))
 
 (def starter-schema "enum Episode { NEWHOPE, EMPIRE, JEDI }
 
@@ -38,6 +39,7 @@ type Query {
   droid(id: String!): Droid
   hello(world: WorldInput): String
   objectList: [Object!]!
+  gene(id: String!): Object
 }
 
 type Object {
@@ -51,7 +53,7 @@ input WorldInput {
 type Mutation {
   createHuman(name: String, friends: [String]): Human
 }
-  
+
 schema {
   query: Query
   mutation: Mutation
@@ -176,4 +178,3 @@ schema {
   (let  [type-schema (validator/validate-schema parsed-schema)
          context nil]
     (executor/execute context type-schema starter-resolver-fn query variables)))
-
