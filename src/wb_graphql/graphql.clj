@@ -35,15 +35,6 @@ type Droid implements Character {
   primaryFunction: String
 }
 
-type Gene {
-  id: String!
-  name: GeneCgc_name
-}
-
-type GeneCgc_name {
-  text: String
-}
-
 type Query {
   hero(episode: Episode): Character
   human(id: String!): Human
@@ -202,9 +193,12 @@ schema {
                    (->> (:db/ident field-entity)
                         (component-name)
                         (graphql-type-name))
-                   (->> (:pace/obj-ref field-entity)
-                        (namespace)
-                        (graphql-type-name)))))
+                   (if-let [ref-name (:pace/obj-ref field-entity)]
+                     (->> ref-name
+                          (namespace)
+                          (graphql-type-name))
+                     "String")) ;; TODO Enum
+    "String")) ;; TODO Date (instance type)
 
 (defn field-schema [db field-name]
   (let [field-entity (d/entity db field-name)]
@@ -232,9 +226,11 @@ schema {
                        [_ :db.install/attribute ?e]
                        [(namespace ?ident) ?ns]]
                      db (str type-name)))]
-    (format "type %s {
+    (format "
+type %s {
 %s
-}"
+}
+"
             (graphql-type-name type-name)
             (->> attrs
                  (map (partial field-schema db))
@@ -260,8 +256,13 @@ schema {
          db ident)))
 
 (def generated-schema
-  (let [db [d/db datomic-conn]]
-    []))
+  (let [db (d/db datomic-conn)]
+    (->> (type-names db)
+         (map (fn [tn]
+                (try
+                  (type-schema db tn)
+                  (catch Exception e (str tn " causes problem"))))))))
+
 (def parsed-schema
   (parser/parse
    (str/join "\n"
