@@ -198,8 +198,43 @@ schema {
            :where
            [?e :db/ident ?ident]
            [_ :db.install/attribute ?e]
-           [(namespace ?ident) ?ns]]
+           [(namespace ?ident) ?ns]
+           (not-join [?ns]
+                     [_ :pace/use-ns ?ns])]
          db)))
+
+(defn type-schema [type-name]
+  )
+(defn interface-names []
+  (let [db (d/db datomic-conn)]
+    (d/q '[:find [?inf ...]
+           :where
+           [?e :db/ident _]
+           [_ :db.install/attribute ?e]
+           [?e :pace/use-ns ?inf]]
+         db)))
+
+(defn x []
+  (let [db (d/db datomic-conn)]
+    (d/q '[:find (pull ?e [*])
+           :where
+           [?e :db/ident ?ident]
+           [_ :db.install/attribute ?e]
+           [?e :db/isComponent true]
+           ]
+         db)))
+
+(defn type-schema [type-name]
+  (let [db (d/db datomic-conn)]
+    (d/q '[:find [?ident ...]
+           :in $ ?ns
+           :where
+           [?e :db/ident ?ident]
+           [_ :db.install/attribute ?e]
+           [(namespace ?ident) ?ns]]
+         db type-name)))
+
+
 
 ;; (def introspection-schema introspection/introspection-schema)
 
