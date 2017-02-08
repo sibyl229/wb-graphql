@@ -36,7 +36,11 @@ type Droid implements Character {
 
 type Gene {
   id: String!
-  name: String
+  name: GeneCgc_name
+}
+
+type GeneCgc_name {
+  text: String
 }
 
 type Query {
@@ -177,12 +181,25 @@ schema {
      ["Gene" "id"] (fn [context parent args]
                      (:gene/id parent))
      ["Gene" "name"] (fn [context parent args]
-                     "aaa")
+                       (->> parent
+                            (:gene/cgc-name)
+                            (:gene.cgc-name/text)
+                            (assoc {} :text)
+                            ))
      ["Mutation" "createHuman"] (fn [context parent args]
                                   (create-human args))
      :else nil)))
 
 (def parsed-schema (parser/parse starter-schema))
+
+(defn type-names []
+  (let [db (d/db datomic-conn)]
+    (d/q '[:find [?ns ...]
+           :where
+           [?e :db/ident ?ident]
+           [_ :db.install/attribute ?e]
+           [(namespace ?ident) ?ns]]
+         db)))
 
 ;; (def introspection-schema introspection/introspection-schema)
 
