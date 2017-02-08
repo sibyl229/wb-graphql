@@ -7,10 +7,14 @@
             [graphql-clj.introspection :as introspection]
             [clojure.string :as str]
             [clojure.core.match :as match]
+            [mount.core :as mount]
             [datomic.api :as d]
             [wb-graphql.db :refer [datomic-conn]]))
 
-(def starter-schema "enum Episode { NEWHOPE, EMPIRE, JEDI }
+
+(mount/start)
+(def starter-schema "
+enum Episode { NEWHOPE, EMPIRE, JEDI }
 
 interface Character {
   id: String!
@@ -59,7 +63,8 @@ type Mutation {
 schema {
   query: Query
   mutation: Mutation
-}")
+}
+")
 
 (def luke {:id "1000",
            :name "Luke Skywalker"
@@ -264,10 +269,11 @@ type %s {
                   (catch Exception e (str tn " causes problem"))))))))
 
 (def parsed-schema
-  (parser/parse
-   (str/join "\n"
-             (cons starter-schema
-                   generated-schema))))
+  (->> (parser/parse
+        (str/join "\n"
+                  (cons starter-schema
+                        generated-schema)))
+       (validator/validate-schema)))
 
 (defn starter-resolver-fn [type-name field-name]
   (let [db (d/db datomic-conn)]
@@ -310,6 +316,6 @@ type %s {
 
 (defn execute
   [query variables]
-  (let  [type-schema (validator/validate-schema parsed-schema)
+  (let  [type-schema parsed-schema
          context nil]
     (executor/execute context type-schema starter-resolver-fn query variables)))
