@@ -5,6 +5,7 @@
             [graphql-clj.executor :as executor]
             [graphql-clj.validator :as validator]
             [graphql-clj.introspection :as introspection]
+            [clojure.string :as str]
             [clojure.core.match :as match]
             [datomic.api :as d]
             [wb-graphql.db :refer [datomic-conn]]))
@@ -192,47 +193,75 @@ schema {
 
 (def parsed-schema (parser/parse starter-schema))
 
-(defn type-names []
-  (let [db (d/db datomic-conn)]
-    (d/q '[:find [?ns ...]
-           :where
-           [?e :db/ident ?ident]
-           [_ :db.install/attribute ?e]
-           [(namespace ?ident) ?ns]
+(defn type-names [db]
+  (d/q '[:find [?ns ...]
+         :where
+         [?e :db/ident ?ident]
+         [_ :db.install/attribute ?e]
+         [(namespace ?ident) ?ns]
            (not-join [?ns]
                      [_ :pace/use-ns ?ns])]
-         db)))
+       db))
 
-(defn type-schema [type-name]
-  )
-(defn interface-names []
-  (let [db (d/db datomic-conn)]
-    (d/q '[:find [?inf ...]
+(defn type-schema [db type-name]
+  (d/q '[:find [?ident ...]
+         :in $ ?ns
+         :where
+         [?e :db/ident ?ident]
+         [_ :db.install/attribute ?e]
+         [(namespace ?ident) ?ns]]
+       db type-name))
+
+(defn component-name [attr-name]
+  (keyword (str (namespace attr-name)
+                "."
+                (name attr-name))))
+
+(defn graphql-type-name [datomic-type-name]
+  (-> (name datomic-type-name)
+      (str/replace #"-" "_")
+      (str/replace #"\." "__")
+      (str/capitalize)))
+
+(defn field-type [field-entity]
+  (case (:db/valueType field-entity)
+    :db.type/string "String"
+    :db.type/boolean "Boolean"
+    :db.type/long "Int"
+    :db.type/float "Float"
+    :db.type/double "Float"
+    :db.type/ref (if (:db/isComponent field-entity)
+                   (->> (:db/ident field-entity)
+                        (component-name)
+                        (graphql-type-name)))))
+
+(defn field-schema [db field-name]
+  (let [field-entity (d/entity db field-name)]
+    (case (:db/cardinality field-entity)
+      :db.cardinality/one
+      (format "%s: %s"
+              (name field-name)
+              (field-type field-entity)))))
+
+
+(defn interface-names [db]
+  (d/q '[:find [?inf ...]
            :where
            [?e :db/ident _]
            [_ :db.install/attribute ?e]
            [?e :pace/use-ns ?inf]]
-         db)))
+         db))
 
-(defn x []
+(defn x [ident]
   (let [db (d/db datomic-conn)]
     (d/q '[:find (pull ?e [*])
+           :in $ ?ident
            :where
            [?e :db/ident ?ident]
-           [_ :db.install/attribute ?e]
-           [?e :db/isComponent true]
+           (not [_ :db.install/attribute ?e])
            ]
-         db)))
+         db ident)))
 
-(defn type-schema [type-name]
-  (let [db (d/db datomic-conn)]
-    (d/q '[:find [?ident ...]
-           :in $ ?ns
-           :where
-           [?e :db/ident ?ident]
-           [_ :db.install/attribute ?e]
-           [(namespace ?ident) ?ns]]
-         db type-name)))
 
 
 
