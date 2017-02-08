@@ -19,7 +19,7 @@
                   :exclusions [joda-time]]
                  [com.amazonaws/aws-java-sdk-dynamodb "1.11.6"
                   :exclusions [joda-time]]]
-  :main ^:skip-aot wb-graphql.core
+  :main ^:skip-aot wb-graphql.graphql
   :target-path "target/%s"
   :resource-paths ["build"]
   :profiles {:uberjar {:aot :all}
