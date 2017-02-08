@@ -203,15 +203,6 @@ schema {
                      [_ :pace/use-ns ?ns])]
        db))
 
-(defn type-schema [db type-name]
-  (d/q '[:find [?ident ...]
-         :in $ ?ns
-         :where
-         [?e :db/ident ?ident]
-         [_ :db.install/attribute ?e]
-         [(namespace ?ident) ?ns]]
-       db type-name))
-
 (defn component-name [attr-name]
   (keyword (str (namespace attr-name)
                 "."
@@ -223,6 +214,11 @@ schema {
       (str/replace #"\." "__")
       (str/capitalize)))
 
+(defn graphql-field-name [datomic-attr-name]
+  (-> (name datomic-attr-name)
+      (str/replace #"-" "_")
+      (str/replace #"\." "__")))
+
 (defn field-type [field-entity]
   (case (:db/valueType field-entity)
     :db.type/string "String"
@@ -233,6 +229,9 @@ schema {
     :db.type/ref (if (:db/isComponent field-entity)
                    (->> (:db/ident field-entity)
                         (component-name)
+                        (graphql-type-name))
+                   (->> (:pace/obj-ref field-entity)
+                        (namespace)
                         (graphql-type-name)))))
 
 (defn field-schema [db field-name]
@@ -240,9 +239,31 @@ schema {
     (case (:db/cardinality field-entity)
       :db.cardinality/one
       (format "%s: %s"
-              (name field-name)
+              (graphql-field-name field-name)
+              (field-type field-entity))
+
+      :db.cardinality/many
+      (format "%s: [%s]"
+              (graphql-field-name field-name)
               (field-type field-entity)))))
 
+(defn type-schema [db type-name]
+  (if-let [attrs
+           (seq (d/q '[:find [?ident ...]
+                       :in $ ?ns
+                       :where
+                       [?e :db/ident ?ident]
+                       [_ :db.install/attribute ?e]
+                       [(namespace ?ident) ?ns]]
+                     db (str type-name)))]
+    (format "type %s {
+%s
+}"
+            (graphql-type-name type-name)
+            (->> attrs
+                 (map (partial field-schema db))
+                 (map (partial str "  "))
+                 (str/join "\n")))))
 
 (defn interface-names [db]
   (d/q '[:find [?inf ...]
