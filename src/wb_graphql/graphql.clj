@@ -158,41 +158,6 @@ schema {
     (swap! humanData assoc new-human-id new-human)
     new-human))
 
-(defn starter-resolver-fn [type-name field-name]
-  (let [db (d/db datomic-conn)]
-    (match/match
-     [type-name field-name]
-     ["Query" "hero"] (fn [context parent args]
-                        (get-hero (:episode args)))
-     ["Query" "human"] (fn [context parent args]
-                         (get-human (str (get args "id"))))
-     ["Query" "droid"] (fn [context parent args]
-                         (get-droid (str (get args "id"))))
-     ["Query" "objectList"] (fn [context parent args]
-                              (repeat 3 {:id (java.util.UUID/randomUUID)}))
-     ["Query", "gene"] (fn [context parent args]
-                         (d/entity db [:gene/id (get args "id")]))
-     ;; Hacky!!! Should use resolver for interface
-     ["Human" "friends"] (fn [context parent args]
-                           (get-friends parent))
-     ["Droid" "friends"] (fn [context parent args]
-                           (get-friends parent))
-     ["Character" "friends"] (fn [context parent args]
-                               (get-friends parent))
-     ["Gene" "id"] (fn [context parent args]
-                     (:gene/id parent))
-     ["Gene" "name"] (fn [context parent args]
-                       (->> parent
-                            (:gene/cgc-name)
-                            (:gene.cgc-name/text)
-                            (assoc {} :text)
-                            ))
-     ["Mutation" "createHuman"] (fn [context parent args]
-                                  (create-human args))
-     :else nil)))
-
-(def parsed-schema (parser/parse starter-schema))
-
 (defn type-names [db]
   (d/q '[:find [?ns ...]
          :where
@@ -218,6 +183,13 @@ schema {
   (-> (name datomic-attr-name)
       (str/replace #"-" "_")
       (str/replace #"\." "__")))
+
+(defn datomic-field-name [graphql-type-name graphql-field-name]
+  (-> (str graphql-type-name "/" graphql-field-name)
+      (str/replace #"__" ".")
+      (str/replace #"_" "-")
+      (str/lower-case)
+      (keyword)))
 
 (defn field-type [field-entity]
   (case (:db/valueType field-entity)
@@ -246,6 +218,10 @@ schema {
       (format "%s: [%s]"
               (graphql-field-name field-name)
               (field-type field-entity)))))
+
+(defn field-resolver [field-name]
+  (fn [context parent args]
+    (field-name parent)))
 
 (defn type-schema [db type-name]
   (if-let [attrs
@@ -282,6 +258,49 @@ schema {
            (not [_ :db.install/attribute ?e])
            ]
          db ident)))
+
+(def generated-schema
+  (let [db [d/db datomic-conn]]
+    []))
+(def parsed-schema
+  (parser/parse
+   (str/join "\n"
+             (cons starter-schema
+                   generated-schema))))
+
+(defn starter-resolver-fn [type-name field-name]
+  (let [db (d/db datomic-conn)]
+    (match/match
+     [type-name field-name]
+     ["Query" "hero"] (fn [context parent args]
+                        (get-hero (:episode args)))
+     ["Query" "human"] (fn [context parent args]
+                         (get-human (str (get args "id"))))
+     ["Query" "droid"] (fn [context parent args]
+                         (get-droid (str (get args "id"))))
+     ["Query" "objectList"] (fn [context parent args]
+                              (repeat 3 {:id (java.util.UUID/randomUUID)}))
+     ["Query", "gene"] (fn [context parent args]
+                         (d/entity db [:gene/id (get args "id")]))
+     ;; Hacky!!! Should use resolver for interface
+     ["Human" "friends"] (fn [context parent args]
+                           (get-friends parent))
+     ["Droid" "friends"] (fn [context parent args]
+                           (get-friends parent))
+     ["Character" "friends"] (fn [context parent args]
+                               (get-friends parent))
+     ;; ["Gene" "id"] (fn [context parent args]
+     ;;                 (:gene/id parent))
+     ;; ["Gene" "name"] (fn [context parent args]
+     ;;                   (->> parent
+     ;;                        (:gene/cgc-name)
+     ;;                        (:gene.cgc-name/text)
+     ;;                        (assoc {} :text)
+     ;;                        ))
+     ["Mutation" "createHuman"] (fn [context parent args]
+                                  (create-human args))
+     :else (fn [context parent args]
+             ((datomic-field-name type-name field-name) parent)))))
 
 
 
