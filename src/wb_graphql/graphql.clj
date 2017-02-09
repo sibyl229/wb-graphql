@@ -266,7 +266,7 @@ type %s {
                   (catch Exception e (str tn " causes problem"))))))))
 
 (def parsed-schema
-  (->> (cons generated-schema starter-schema)
+  (->> (conj generated-schema starter-schema)
        (str/join "\n")
        (parser/parse)
        (validator/validate-schema)))
