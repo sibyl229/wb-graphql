@@ -164,6 +164,18 @@ schema {
                    [_ :pace/use-ns ?ns])]
        db))
 
+(defn has-type [db datomic-type-name]
+  (seq
+   (d/q '[:find [?ident ...]
+          :in $ ?ns
+          :where
+          [?e :db/ident ?ident]
+          [_ :db.install/attribute ?e]
+          [(namespace ?ident) ?ns]
+          (not-join [?ns]
+                    [_ :pace/use-ns ?ns])]
+        db (name datomic-type-name))))
+
 (defn component-name [attr-name]
   (keyword (str (namespace attr-name)
                 "."
@@ -195,9 +207,11 @@ schema {
     :db.type/float "Float"
     :db.type/double "Float"
     :db.type/ref (if (:db/isComponent field-entity)
-                   (->> (:db/ident field-entity)
-                        (component-name)
-                        (graphql-type-name))
+                   (let [cn (->> (:db/ident field-entity)
+                                 (component-name))]
+                     (if-let [c (has-type (d/entity-db field-entity) cn)]
+                       (graphql-type-name cn)
+                       "String"))
                    (if-let [ref-name (:pace/obj-ref field-entity)]
                      (->> ref-name
                           (namespace)
