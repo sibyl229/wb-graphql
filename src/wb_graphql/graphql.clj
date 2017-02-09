@@ -160,8 +160,8 @@ schema {
          [?e :db/ident ?ident]
          [_ :db.install/attribute ?e]
          [(namespace ?ident) ?ns]
-           (not-join [?ns]
-                     [_ :pace/use-ns ?ns])]
+         (not-join [?ns]
+                   [_ :pace/use-ns ?ns])]
        db))
 
 (defn component-name [attr-name]
@@ -218,9 +218,6 @@ schema {
               (graphql-field-name field-name)
               (field-type field-entity)))))
 
-(defn field-resolver [field-name]
-  (fn [context parent args]
-    (field-name parent)))
 
 (defn type-schema [db type-name]
   (if-let [attrs
@@ -306,8 +303,11 @@ type %s {
      ;;                        ))
      ["Mutation" "createHuman"] (fn [context parent args]
                                   (create-human args))
-     :else (fn [context parent args]
-             ((datomic-field-name type-name field-name) parent)))))
+     :else (let [entity-field (->> (datomic-field-name type-name field-name)
+                                   (d/entity db))]
+             (if entity-field
+               (fn [context parent args]
+                 ((datomic-field-name type-name field-name) parent)))))))
 
 
 
