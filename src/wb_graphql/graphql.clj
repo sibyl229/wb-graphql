@@ -44,6 +44,7 @@ type Query {
   droid(id: String!): Droid
   hello(world: WorldInput): String
   objectList: [Object!]!
+  gene(id: String!): Gene
 }
 
 type Object {
@@ -271,10 +272,10 @@ type %s {
 
 (defn generate-schema [db]
   (->> (type-names db)
-         (map (fn [tn]
-                (try
-                  (type-schema db tn)
-                  (catch Exception e (str tn " causes problem")))))))
+       (map (fn [tn]
+              (try
+                (type-schema db tn)
+                (catch Exception e (str tn " causes problem")))))))
 
 (defn parse-schema [& schema-parts]
   (->> (flatten schema-parts)
@@ -328,8 +329,7 @@ type %s {
 
 (defn create-executor [db]
   (let [generated-schema (generate-schema db)
-        ]
+        validated-schema (parse-schema generated-schema starter-schema)
+        context nil]
     (fn [query variables]
-      (let  [type-schema (parse-schema starter-schema)
-             context nil]
-        (executor/execute context type-schema starter-resolver-fn query variables)))))
+          (executor/execute context validated-schema starter-resolver-fn query variables))))
