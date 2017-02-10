@@ -200,22 +200,34 @@ schema {
         (str/replace #"-" "_")
         (str/replace #"\." "__"))))
 
-(defn datomic-field-name [graphql-type-name graphql-field-name]
+(defn has-attr [db datomic-attr-name]
+  (let [fixed-attr-name (-> datomic-attr-name
+                            (str/replace #"/_" "/")
+                            (str/replace #"^:" ""))]
+    (d/entity db [:db/ident (keyword fixed-attr-name)])))
+
+(defmulti datomic-field-name
+  (fn[_ graphql-field-name]
+    (cond
+      (re-find #"__OF__" graphql-field-name) :reverse)))
+
+(defmethod datomic-field-name :default [graphql-type-name graphql-field-name]
   (-> (str graphql-type-name "/" graphql-field-name)
       (str/replace #"__" ".")
       (str/replace #"_" "-")
       (str/lower-case)
       (keyword)))
 
-(defn datomic-field-name-reverse [graphql-type-name graphql-field-name]
+(defmethod datomic-field-name :reverse [_ graphql-field-name]
   (let [[attr-name type-name comp-name]
         (str/split graphql-field-name #"(__OF__|__VIA__)")]
     (-> (str type-name
              (if comp-name (str "." comp-name))
-             "/_"
+             "/"
              attr-name)
         (str/replace #"__" ".")
-        (str/replace #"[^/]_" "-")
+        (str/replace #"_" "-")
+        (str/replace #"/" "/_")
         (keyword))))
 
 (defn field-type [field-entity]
@@ -360,11 +372,10 @@ type %s {
      ["Mutation" "createHuman"] (fn [context parent args]
                                   (create-human args))
 
-     :else (let [entity-field (->> (datomic-field-name type-name field-name)
-                                   (d/entity db))]
-             (if entity-field
+     :else (let [attr-kw (datomic-field-name type-name field-name)]
+             (if (has-attr db attr-kw)
                (fn [context parent args]
-                 ((datomic-field-name type-name field-name) parent)))))))
+                 (attr-kw parent)))))))
 
 
 
