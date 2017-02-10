@@ -262,16 +262,28 @@ schema {
               (graphql-field-name-reverse field-name)
               (field-type-reverse field-entity))))
 
+(defn get-attrs [db type-name]
+  (d/q '[:find [?ident ...]
+         :in $ ?ns
+         :where
+         [?e :db/ident ?ident]
+         [_ :db.install/attribute ?e]
+         [(namespace ?ident) ?ns]]
+       db (name type-name)))
+
+(defn get-attrs-reverse [db type-name]
+  (d/q '[:find [?ident ...]
+         :in $ ?ns
+         :where
+         [?e :pace/obj-ref ?ref]
+         [?ref :db/ident ?ref-ident]
+         [(namespace ?ref-ident) ?ns]
+         [?e :db/ident ?ident]
+         [_ :db.install/attribute ?e]]
+       db (name type-name)))
 
 (defn type-schema [db type-name]
-  (if-let [attrs
-           (seq (d/q '[:find [?ident ...]
-                       :in $ ?ns
-                       :where
-                       [?e :db/ident ?ident]
-                       [_ :db.install/attribute ?e]
-                       [(namespace ?ident) ?ns]]
-                     db (str type-name)))]
+  (if-let [attrs (seq (get-attrs db type-name))]
     (format "
 type %s {
 %s
