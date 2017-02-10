@@ -241,7 +241,8 @@ schema {
 (defn field-type-reverse [field-entity]
   (let [tn (namespace (:db/ident field-entity))]
     (if (has-type (d/entity-db field-entity) tn)
-      (graphql-type-name tn))))
+      (graphql-type-name tn)
+      "String")))
 
 (defn field-schema [db field-name]
   (let [field-entity (d/entity db field-name)]
@@ -284,16 +285,17 @@ schema {
 
 (defn type-schema [db type-name]
   (if-let [attrs (seq (get-attrs db type-name))]
-    (format "
+    (let [reverse-attrs (get-attrs-reverse db type-name)]
+      (->> (concat (map (partial field-schema db) attrs)
+                   (map (partial field-schema-reverse db) reverse-attrs))
+           (map (partial str "  "))
+           (str/join "\n")
+           (format "
 type %s {
 %s
 }
 "
-            (graphql-type-name type-name)
-            (->> attrs
-                 (map (partial field-schema db))
-                 (map (partial str "  "))
-                 (str/join "\n")))))
+              (graphql-type-name type-name))))))
 
 (defn interface-names [db]
   (d/q '[:find [?inf ...]
