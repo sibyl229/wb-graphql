@@ -7,12 +7,11 @@
             [graphql-clj.introspection :as introspection]
             [clojure.string :as str]
             [clojure.core.match :as match]
-            [mount.core :as mount]
             [datomic.api :as d]
             [wb-graphql.db :refer [datomic-conn]]))
 
 
-(mount/start)
+
 (def starter-schema "
 enum Episode { NEWHOPE, EMPIRE, JEDI }
 
@@ -45,7 +44,6 @@ type Query {
   droid(id: String!): Droid
   hello(world: WorldInput): String
   objectList: [Object!]!
-  gene(id: String!): Gene
 }
 
 type Object {
@@ -271,16 +269,15 @@ type %s {
            ]
          db ident)))
 
-(def generated-schema
-  (let [db (d/db datomic-conn)]
-    (->> (type-names db)
+(defn generate-schema [db]
+  (->> (type-names db)
          (map (fn [tn]
                 (try
                   (type-schema db tn)
-                  (catch Exception e (str tn " causes problem"))))))))
+                  (catch Exception e (str tn " causes problem")))))))
 
-(def parsed-schema
-  (->> (conj generated-schema starter-schema)
+(defn parse-schema [& schema-parts]
+  (->> (flatten schema-parts)
        (str/join "\n")
        (parser/parse)
        (validator/validate-schema)))
@@ -316,6 +313,7 @@ type %s {
      ;;                        ))
      ["Mutation" "createHuman"] (fn [context parent args]
                                   (create-human args))
+
      :else (let [entity-field (->> (datomic-field-name type-name field-name)
                                    (d/entity db))]
              (if entity-field
@@ -325,10 +323,13 @@ type %s {
 
 
 
+
 ;; (def introspection-schema introspection/introspection-schema)
 
-(defn execute
-  [query variables]
-  (let  [type-schema parsed-schema
-         context nil]
-    (executor/execute context type-schema starter-resolver-fn query variables)))
+(defn create-executor [db]
+  (let [generated-schema (generate-schema db)
+        ]
+    (fn [query variables]
+      (let  [type-schema (parse-schema starter-schema)
+             context nil]
+        (executor/execute context type-schema starter-resolver-fn query variables)))))
