@@ -191,12 +191,32 @@ schema {
       (str/replace #"-" "_")
       (str/replace #"\." "__")))
 
+(defn graphql-field-name-reverse [datomic-attr-name]
+  (let [[type-name comp-name]
+        (str/split (namespace datomic-attr-name) #"\." 2)]
+    (-> (str (name datomic-attr-name)
+             "__OF__" type-name
+             (if comp-name (str "__VIA__" comp-name)))
+        (str/replace #"-" "_")
+        (str/replace #"\." "__"))))
+
 (defn datomic-field-name [graphql-type-name graphql-field-name]
   (-> (str graphql-type-name "/" graphql-field-name)
       (str/replace #"__" ".")
       (str/replace #"_" "-")
       (str/lower-case)
       (keyword)))
+
+(defn datomic-field-name-reverse [graphql-type-name graphql-field-name]
+  (let [[attr-name type-name comp-name]
+        (str/split graphql-field-name #"(__OF__|__VIA__)")]
+    (-> (str type-name
+             (if comp-name (str "." comp-name))
+             "/_"
+             attr-name)
+        (str/replace #"__" ".")
+        (str/replace #"[^/]_" "-")
+        (keyword))))
 
 (defn field-type [field-entity]
   (case (:db/valueType field-entity)
@@ -218,6 +238,11 @@ schema {
                      "String")) ;; TODO Enum
     "String")) ;; TODO Date (instance type)
 
+(defn field-type-reverse [field-entity]
+  (let [tn (namespace (:db/ident field-entity))]
+    (if (has-type (d/entity-db field-entity) tn)
+      (graphql-type-name tn))))
+
 (defn field-schema [db field-name]
   (let [field-entity (d/entity db field-name)]
     (case (:db/cardinality field-entity)
@@ -230,6 +255,12 @@ schema {
       (format "%s: [%s]"
               (graphql-field-name field-name)
               (field-type field-entity)))))
+
+(defn field-schema-reverse [db field-name]
+  (let [field-entity (d/entity db field-name)]
+    (format "%s: [%s]"
+              (graphql-field-name-reverse field-name)
+              (field-type-reverse field-entity))))
 
 
 (defn type-schema [db type-name]
