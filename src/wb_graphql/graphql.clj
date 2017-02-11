@@ -270,10 +270,12 @@ schema {
               (field-type field-entity)))))
 
 (defn field-schema-reverse [db field-name]
-  (let [field-entity (d/entity db field-name)]
-    (format "%s: [%s]"
-              (graphql-field-name-reverse field-name)
-              (field-type-reverse field-entity))))
+  (let [field-entity (d/entity db field-name)
+        gq-field-name (graphql-field-name-reverse field-name)
+        gq-type-name (field-type-reverse field-entity)]
+    (if (:db/isComponent field-entity)
+      (format "%s: %s" gq-field-name gq-type-name)
+      (format "%s: [%s]" gq-field-name gq-type-name))))
 
 (defn get-attrs [db type-name]
   (d/q '[:find [?ident ...]
@@ -284,7 +286,7 @@ schema {
          [(namespace ?ident) ?ns]]
        db (name type-name)))
 
-(defn get-attrs-reverse [db type-name]
+(defn get-refs-reverse [db type-name]
   (d/q '[:find [?ident ...]
          :in $ ?ns
          :where
@@ -295,11 +297,21 @@ schema {
          [_ :db.install/attribute ?e]]
        db (name type-name)))
 
+(defn get-comp-reverse [db comp-type-name]
+  (if-let [[_ parent-name attr-name]
+           (re-matches #"(.+)\.(.+)" (name comp-type-name))]
+    (let [attr-kw (keyword (str parent-name "/" attr-name))]
+      (if (d/entity db attr-kw)
+        [attr-kw]
+        []))))
+
 (defn type-schema [db type-name]
   (if-let [attrs (seq (get-attrs db type-name))]
-    (let [reverse-attrs (get-attrs-reverse db type-name)]
+    (let [reverse-refs (get-refs-reverse db type-name)
+          reverse-comp (get-comp-reverse db type-name)]
       (->> (concat (map (partial field-schema db) attrs)
-                   (map (partial field-schema-reverse db) reverse-attrs))
+                   (map (partial field-schema-reverse db) reverse-refs)
+                   (map (partial field-schema-reverse db) reverse-comp))
            (map (partial str "  "))
            (str/join "\n")
            (format "
