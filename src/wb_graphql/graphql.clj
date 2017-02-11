@@ -175,6 +175,19 @@ schema {
                     [_ :pace/use-ns ?ns])]
         db (name datomic-type-name))))
 
+(defn core-type-names [db]
+  (d/q '[:find [?ns ...]
+         :in $ ?n
+         :where
+         [(name ?ident) ?n]
+         [?e :db/ident ?ident]
+         [?e :db/valueType :db.type/string]
+         [_ :db.install/attribute ?e]
+         [(namespace ?ident) ?ns]
+         (not-join [?ns]
+                    [_ :pace/use-ns ?ns])]
+       db "id"))
+
 (defn component-name [attr-name]
   (keyword (str (namespace attr-name)
                 "."
