@@ -12,7 +12,7 @@
 
 
 
-(def starter-schema "
+(def starter-type-schema "
 enum Episode { NEWHOPE, EMPIRE, JEDI }
 
 interface Character {
@@ -38,15 +38,6 @@ type Droid implements Character {
   primaryFunction: String
 }
 
-type Query {
-  hero(episode: Episode): Character
-  human(id: String!): Human
-  droid(id: String!): Droid
-  hello(world: WorldInput): String
-  objectList: [Object!]!
-  gene(id: String!): Gene
-}
-
 type Object {
   id: String!
 }
@@ -54,7 +45,9 @@ type Object {
 input WorldInput {
   text: String
 }
+")
 
+(def starter-schema "
 type Mutation {
   createHuman(name: String, friends: [String]): Human
 }
@@ -186,7 +179,7 @@ schema {
          [(namespace ?ident) ?ns]
          (not-join [?ns]
                     [_ :pace/use-ns ?ns])]
-       db "id"))
+       db "id")) ;; TODO check type isn't a component
 
 (defn component-name [attr-name]
   (keyword (str (namespace attr-name)
@@ -352,18 +345,29 @@ type %s {
            ]
          db ident)))
 
-(defn generate-schema [db]
+(defn generate-type-schema [db]
   (->> (type-names db)
        (map (fn [tn]
               (try
                 (type-schema db tn)
                 (catch Exception e (str tn " causes problem")))))))
 
+(defn generate-query-schema [db]
+  (->> (core-type-names db)
+       (map #(format "%s(id: String!): %s"
+                     (str/replace % #"-" "_")
+                     (graphql-type-name %)))
+       (str/join "\n  ")
+       (format "
+type Query {
+  %s
+}
+")))
+
 (defn parse-schema [& schema-parts]
   (->> (flatten schema-parts)
        (str/join "\n")
-       (parser/parse)
-       (validator/validate-schema)))
+       (parser/parse)))
 
 (defn starter-resolver-fn [type-name field-name]
   (let [db (d/db datomic-conn)]
@@ -377,8 +381,12 @@ type %s {
                          (get-droid (str (get args "id"))))
      ["Query" "objectList"] (fn [context parent args]
                               (repeat 3 {:id (java.util.UUID/randomUUID)}))
-     ["Query", "gene"] (fn [context parent args]
-                         (d/entity db [:gene/id (get args "id")]))
+     ["Query", _] (let [kwid (-> (str field-name "/id")
+                                 (str/replace #"_" "-")
+                                 (keyword))]
+                    (if (d/entity db kwid)
+                      (fn [context parent args]
+                        (d/entity db [:cds/id (get args "id")]))))
      ;; Hacky!!! Should use resolver for interface
      ["Human" "friends"] (fn [context parent args]
                            (get-friends parent))
@@ -409,8 +417,12 @@ type %s {
 ;; (def introspection-schema introspection/introspection-schema)
 
 (defn create-executor [db]
-  (let [generated-schema (generate-schema db)
-        validated-schema (parse-schema generated-schema starter-schema)
+  (let [validated-schema
+        (validator/validate-schema
+         (parse-schema starter-type-schema
+                       (generate-type-schema db)
+                       (generate-query-schema db)
+                       starter-schema))
         context nil]
     (fn [query variables]
           (executor/execute context validated-schema starter-resolver-fn query variables))))
