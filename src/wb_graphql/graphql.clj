@@ -386,7 +386,7 @@ type Query {
                                  (keyword))]
                     (if (d/entity db kwid)
                       (fn [context parent args]
-                        (d/entity db [:cds/id (get args "id")]))))
+                        (d/entity db [kwid (get args "id")]))))
      ;; Hacky!!! Should use resolver for interface
      ["Human" "friends"] (fn [context parent args]
                            (get-friends parent))
