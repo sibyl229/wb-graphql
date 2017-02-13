@@ -1,6 +1,68 @@
-This project is a Demo project for [graphql-clj](https://github.com/tendant/graphql-clj) and [GraphiQL](https://github.com/graphql/graphiql). You can start trying Clojure with GraphQL in a few minutes.
+### Introduction
+The GraphQL API for WormBase data.
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+## Get started
+
+#### Sample queries
+```
+query {
+  gene(id: "WBGene00000426") {
+    id
+    biotype {
+      name
+    }
+    concise_description {
+      text
+    }
+    corresponding_transcript {
+      transcript {
+        id
+      }
+    }
+    gene__OF__interaction__VIA__interactor_overlapping_gene {
+      interactor_overlapping_gene__OF__interaction {
+        id
+        interactor_overlapping_gene {
+          gene {
+            id
+            public_name
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Example with pagination:
+
+```
+query {
+  getGenesByNames(names: "abi-1 xbp-1 ced-1 unc-89 unc-86 unc-87 unc-90 unc-95 unc-96 unc-93 unc-94 unc-77 unc-78 unc-75 unc-76 unc-79 unc-80 unc-84 unc-85 unc-82 unc-83 unc-64" cursor:"936783907216245") {
+    hasNextPage
+    endCursor
+    edges {
+      node {
+        id
+        public_name
+        biotype {
+          name
+        }
+      }
+    }
+  }
+}
+```
+
+#### Sample mutations
+
+N/A at the moment
+
+
+## To contribute
+
+### Obtain credentials ###
+TODO...
 
 ### Prepare environment
 
@@ -16,30 +78,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
     http://localhost:3002/index.html
 
-#### Sample queries
+### Acknowledgement
 
-```
-query {
-  human (id:"1002") {
-    id
-    name
-    friends {
-      id
-      name
-      friends {
-        id
-      }
-    }
-  }
-}
-```
-
-#### Sample mutations
-
-```
-mutation{
-  createHuman (name:"testname", friends:[]) {
-    id
-  }
-}
-```
+This project was bootstrapped with [GraphQL starter project for Clojure](https://github.com/tendant/graphql-clj-starter), which uses [graphql-clj](https://github.com/tendant/graphql-clj), [GraphiQL](https://github.com/graphql/graphiql), and [Create React App](https://github.com/facebookincubator/create-react-app).
