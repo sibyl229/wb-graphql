@@ -381,7 +381,7 @@ type %sConnection {
        (format "
 type Query {
   %s
-  getGenesByNames(names: String!): GeneConnection
+  getGenesByNames(names: String!, cursor: String): GeneConnection
 }
 ")))
 
@@ -404,18 +404,19 @@ type Query {
                               (repeat 3 {:id (java.util.UUID/randomUUID)}))
      ["Query" "getGenesByNames"] (defn x [context parent args]
                                    (let [names (str/split (get args "names") #"\s+")
+                                         cursor (read-string (get args "cursor" "0"))
                                          objects (take 10 (sort (d/q '[:find [?g ...]
-                                                                       :in $ [?nm ...]
+                                                                       :in $ [?nm ...] ?c
                                                                        :where
-                                                                       [?g :gene/public-name ?nm]]
-                                                                     db names)))]
+                                                                       [?g :gene/public-name ?nm]
+                                                                       [(> ?g ?c)]]
+                                                                     db names cursor)))]
                                      (->> objects
                                           (map #(assoc {}
                                                        :node (d/entity db %)
                                                        :cursor %))
                                           (assoc {:hasNextPage (boolean (seq objects))
-                                                  :endCursor (last objects)
-                                                  :totalCount (count objects)} :edges))))
+                                                  :endCursor (last objects)} :edges))))
      ["Query", _] (let [kwid (-> (str field-name "/id")
                                  (str/replace #"_" "-")
                                  (keyword))]
