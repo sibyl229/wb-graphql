@@ -325,7 +325,22 @@ type %s {
 %s
 }
 "
-              (graphql-type-name type-name))))))
+                   (graphql-type-name type-name))))))
+
+(defn type-connection-schema [db type-name]
+  (let [gq-type-name (graphql-type-name type-name)]
+    (apply format "
+type %sEdge {
+  node: %s
+  cursor: String
+}
+
+type %sConnection {
+  edges: [%sEdge]
+  hasNextPage: Boolean
+  endCursor: String
+}
+" (take 4 (repeat gq-type-name)))))
 
 (defn interface-names [db]
   (d/q '[:find [?inf ...]
@@ -346,11 +361,16 @@ type %s {
          db ident)))
 
 (defn generate-type-schema [db]
-  (->> (type-names db)
-       (map (fn [tn]
-              (try
-                (type-schema db tn)
-                (catch Exception e (str tn " causes problem")))))))
+  (let [ts (type-names db)]
+    (concat
+     (map (fn [tn]
+            (try
+              (type-schema db tn)
+              (catch Exception e (str tn " causes problem")))) ts)
+     (map (fn [tn]
+            (try
+              (type-connection-schema db tn)
+              (catch Exception e (str tn " causes problem")))) ts))))
 
 (defn generate-query-schema [db]
   (->> (core-type-names db)
@@ -361,6 +381,7 @@ type %s {
        (format "
 type Query {
   %s
+  getGenesByNames(names: String!, cursor: String): GeneConnection
 }
 ")))
 
@@ -381,6 +402,21 @@ type Query {
                          (get-droid (str (get args "id"))))
      ["Query" "objectList"] (fn [context parent args]
                               (repeat 3 {:id (java.util.UUID/randomUUID)}))
+     ["Query" "getGenesByNames"] (defn x [context parent args]
+                                   (let [names (str/split (get args "names") #"\s+")
+                                         cursor (read-string (get args "cursor" "0"))
+                                         objects (take 10 (sort (d/q '[:find [?g ...]
+                                                                       :in $ [?nm ...] ?c
+                                                                       :where
+                                                                       [?g :gene/public-name ?nm]
+                                                                       [(> ?g ?c)]]
+                                                                     db names cursor)))]
+                                     (->> objects
+                                          (map #(assoc {}
+                                                       :node (d/entity db %)
+                                                       :cursor %))
+                                          (assoc {:hasNextPage (boolean (seq objects))
+                                                  :endCursor (last objects)} :edges))))
      ["Query", _] (let [kwid (-> (str field-name "/id")
                                  (str/replace #"_" "-")
                                  (keyword))]
