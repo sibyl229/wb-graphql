@@ -11,7 +11,7 @@
                  [ring/ring-json "0.4.0" :exclusions [cheshire]] ;; outdated cheshire mess up connection to Datomic
                  [ring-cors "0.1.8"]
                  [org.clojure/core.match "0.3.0-alpha4"]
-                 [graphql-clj "0.1.20" :exclusions [org.clojure/clojure]]
+                 [graphql-clj "0.2.2" :exclusions [org.clojure/clojure]]
                  [clojure-future-spec "1.9.0-alpha13"]
                  [mount "0.1.11"]
                  [environ "1.1.0"]

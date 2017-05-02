@@ -1,9 +1,8 @@
 (ns wb-graphql.graphql
   (:require [graphql-clj.parser :as parser]
-            [graphql-clj.type :as type]
             [graphql-clj.resolver :as resolver]
             [graphql-clj.executor :as executor]
-            [graphql-clj.validator :as validator]
+            [graphql-clj.schema-validator :as schema-validator]
             [graphql-clj.introspection :as introspection]
             [clojure.string :as str]
             [clojure.core.match :as match]
@@ -266,7 +265,7 @@ type Query {
 (defn parse-schema [& schema-parts]
   (->> (flatten schema-parts)
        (str/join "\n")
-       (parser/parse)))
+       (parser/parse-schema)))
 
 (defn starter-resolver-fn [type-name field-name]
   (let [db (d/db datomic-conn)]
@@ -306,13 +305,15 @@ type Query {
 
 ;; (def introspection-schema introspection/introspection-schema)
 
+(defn create-validated-schema [db]
+  (schema-validator/validate-schema
+   (parse-schema starter-type-schema
+                 (generate-type-schema db)
+                 (generate-query-schema db)
+                 starter-schema)))
+
 (defn create-executor [db]
-  (let [validated-schema
-        (validator/validate-schema
-         (parse-schema starter-type-schema
-                       (generate-type-schema db)
-                       (generate-query-schema db)
-                       starter-schema))
+  (let [validated-schema (create-validated-schema db)
         context nil]
     (fn [query variables]
-          (executor/execute context validated-schema starter-resolver-fn query variables))))
+      (executor/execute context validated-schema starter-resolver-fn query variables))))
