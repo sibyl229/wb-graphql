@@ -312,8 +312,20 @@ type Query {
                  (generate-query-schema db)
                  starter-schema)))
 
+(def serialized-schema-path "serialized-schema.edn")
+
+(defn load-validated-schema []
+  (clojure.edn/read-string (slurp serialized-schema-path)))
+
 (defn create-executor [db]
-  (let [validated-schema (create-validated-schema db)
+  (let [validated-schema (load-validated-schema)
         context nil]
     (fn [query variables]
       (executor/execute context validated-schema starter-resolver-fn query variables))))
+
+(defn -main []
+  (let [db (do (mount.core/start)
+               (d/db datomic-conn))
+        validated-schema (create-validated-schema db)
+        validated-schema-str (with-out-str (clojure.pprint/pprint validated-schema))]
+    (spit serialized-schema-path validated-schema-str)))
