@@ -5,7 +5,7 @@
    [mount.core :refer [defstate]]))
 
 (defn- new-connection []
-  (d/connect (env :trace-db)))
+  (d/connect (env :wb-db-uri)))
 
 (defn- disconnect [conn]
   (d/release conn))

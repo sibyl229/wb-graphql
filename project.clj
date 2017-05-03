@@ -25,18 +25,19 @@
   :profiles {:uberjar {:aot :all}
              :dev {; :ring {:stacktrace-middleware prone.middleware/wrap-exceptions}  ; http://localhost:3000/prone/latest
                    :resource-paths ["resources" "build"]
-                   :dependencies [[prone "1.1.1"]]}}
-  :plugins [[lein-ring "0.9.7"]]
+                   :dependencies [[prone "1.1.1"]]
+                   :env {:wb-db-uri "datomic:ddb://us-east-1/WS258/wormbase"}}}
+  :plugins [[lein-environ "1.1.0"]
+            [lein-ring "0.11.0"]]
   :ring {:handler wb-graphql.handler/app
          :init wb-graphql.handler/init
          :destroy wb-graphql.handler/destroy
          :auto-reload? true
-         :port 3002}
+         :host "0.0.0.0"}
   :javac-options ["-target" "1.8" "-source" "1.8"]
   :jvm-opts ["-Xmx6G"
              ;; same GC options as the transactor,
              ;; should minimize long pauses.
              "-XX:+UseG1GC" "-XX:MaxGCPauseMillis=50"
              "-Ddatomic.objectCacheMax=2500000000"
-             "-Ddatomic.txTimeoutMsec=1000000"]
-  :env {:trace-db "datomic:ddb://us-east-1/WS257/wormbase"})
+             "-Ddatomic.txTimeoutMsec=1000000"])
