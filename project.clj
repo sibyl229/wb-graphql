@@ -21,10 +21,10 @@
                   :exclusions [joda-time]]]
   :main ^:skip-aot wb-graphql.graphql
   :target-path "target/%s"
-  :resource-paths ["build"]
+  :resource-paths ["resources" "build"]
   :profiles {:uberjar {:aot :all}
              :dev {; :ring {:stacktrace-middleware prone.middleware/wrap-exceptions}  ; http://localhost:3000/prone/latest
-                   :resource-paths ["build"]
+                   :resource-paths ["resources" "build"]
                    :dependencies [[prone "1.1.1"]]}}
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler wb-graphql.handler/app
