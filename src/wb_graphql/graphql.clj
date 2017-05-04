@@ -7,6 +7,7 @@
             [clojure.string :as str]
             [clojure.core.match :as match]
             [datomic.api :as d]
+            [taoensso.nippy :as nippy]
             [wb-graphql.db :refer [datomic-conn]]))
 
 
@@ -315,9 +316,11 @@ type Query {
 (def serialized-schema-filename "validated-schema.edn")
 
 (defn load-validated-schema []
-  (->> (clojure.java.io/resource serialized-schema-filename)
-       (slurp)
-       (clojure.edn/read-string)))
+  (let [schema-input-stream (->> (clojure.java.io/resource serialized-schema-filename)
+                                 (clojure.java.io/input-stream))]
+    (with-open [out (new java.io.ByteArrayOutputStream)]
+      (clojure.java.io/copy schema-input-stream out)
+      (nippy/thaw (.toByteArray out)))))
 
 (defn create-executor [db]
   (let [validated-schema (load-validated-schema)
@@ -329,7 +332,7 @@ type Query {
   (let [db (do (mount.core/start)
                (d/db datomic-conn))
         validated-schema (create-validated-schema db)
-        validated-schema-str (with-out-str (clojure.pprint/pprint validated-schema))
         validated-schema-path (format "resources/%s" serialized-schema-filename)]
-    (do (spit validated-schema-path validated-schema-str)
-        (mount.core/stop))))
+    (do (with-open [w (clojure.java.io/output-stream validated-schema-path)]
+          (.write w (nippy/freeze validated-schema))))
+        (mount.core/stop)))

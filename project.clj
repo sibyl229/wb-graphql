@@ -5,6 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [compojure "1.5.0"]
+                 [com.taoensso/nippy "2.13.0"]
                  [ring "1.5.0"]
                  [ring/ring-defaults "0.2.1"]
                  [cheshire "5.6.3"]
