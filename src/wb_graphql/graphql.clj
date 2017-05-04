@@ -263,10 +263,6 @@ type Query {
 }
 ")))
 
-(defn parse-schema [& schema-parts]
-  (->> (flatten schema-parts)
-       (str/join "\n")
-       (parser/parse-schema)))
 
 (defn starter-resolver-fn [type-name field-name]
   (let [db (d/db datomic-conn)]
@@ -306,14 +302,9 @@ type Query {
 
 ;; (def introspection-schema introspection/introspection-schema)
 
-(defn create-validated-schema [db]
-  (schema-validator/validate-schema
-   (parse-schema starter-type-schema
-                 (generate-type-schema db)
-                 (generate-query-schema db)
-                 starter-schema)))
+(def schema-filename "schema.graphql")
 
-(def serialized-schema-filename "validated-schema.edn")
+(def serialized-schema-filename "validated-schema")
 
 (defn load-validated-schema []
   (let [schema-input-stream (->> (clojure.java.io/resource serialized-schema-filename)
@@ -328,11 +319,22 @@ type Query {
     (fn [query variables]
       (executor/execute context validated-schema starter-resolver-fn query variables))))
 
+(defn merge-schema [& schema-parts]
+  (->> (flatten schema-parts)
+       (str/join "\n")))
+
 (defn -main []
   (let [db (do (mount.core/start)
                (d/db datomic-conn))
-        validated-schema (create-validated-schema db)
-        validated-schema-path (format "resources/%s" serialized-schema-filename)]
-    (do (with-open [w (clojure.java.io/output-stream validated-schema-path)]
+        raw-schema (merge-schema starter-type-schema
+                                 (generate-type-schema db)
+                                 (generate-query-schema db)
+                                 starter-schema)
+        validated-schema (->> raw-schema
+                              (parser/parse-schema)
+                              (schema-validator/validate-schema))
+        resources-path (partial format "resources/%s")]
+    (do (spit (resources-path schema-filename) raw-schema)
+        (with-open [w (clojure.java.io/output-stream (resources-path serialized-schema-filename))]
           (.write w (nippy/freeze validated-schema))))
         (mount.core/stop)))

@@ -33,3 +33,6 @@ pom.xml.asc
 *~
 \#*\#
 .\#*
+
+# not check in binery data needed for jar
+resources/validated-schema
