@@ -12,7 +12,7 @@ So far, I made this tool to work with two types of queries (or access point), on
 Here are some example query:
 * a simple query to get the concise description of a gene
 ```
-{
+query {
   gene(id: "WBGene00000426") {
     concise_description {
       text
@@ -25,7 +25,7 @@ Here are some example query:
 (apology for the long feild name. Please use auto-complete **control-space** to help with long field names.)
 
 ```
-{
+query {
   gene(id: "WBGene00000426") {
     public_name
     gene__OF__interaction__VIA__interactor_overlapping_gene {
@@ -44,8 +44,8 @@ Here are some example query:
 
 * get a list of genes by their names and get their CDS IDs ([pagination through cursor](http://graphql.org/learn/pagination/))
 ```
-{
-  getGenesByNames(names: "abi-1 xbp-1 ced-1 unc-89 unc-86 unc-87 unc-90 unc-95 unc-96 unc-93 unc-94 unc-77 unc-78 unc-75 unc-76 unc-79 unc-80 unc-84 unc-85 unc-82 unc-83 unc-64" cursor:"936783907210927") {
+query {
+  getGenesByNames(names: ["abi-1", "xbp-1", "ced-1", "unc-89", "unc-86", "unc-87", "unc-90", "unc-95", "unc-96", "unc-93", "unc-94", "unc-77", "unc-78", "unc-75", "unc-76", "unc-79", "unc-80", "unc-84", "unc-85", "unc-82", "unc-83", "unc-64"], after: "-1") {
     hasNextPage
     endCursor
     edges {

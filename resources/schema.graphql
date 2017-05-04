@@ -6304,6 +6304,8 @@ type Phenotype_info__highEdge {
 type Phenotype_info__highConnection {
   edges: [Phenotype_info__highEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6316,6 +6318,8 @@ type Gene__go_termEdge {
 type Gene__go_termConnection {
   edges: [Gene__go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6328,6 +6332,8 @@ type Interaction__molecule_interactorEdge {
 type Interaction__molecule_interactorConnection {
   edges: [Interaction__molecule_interactorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6340,6 +6346,8 @@ type AnalysisEdge {
 type AnalysisConnection {
   edges: [AnalysisEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6352,6 +6360,8 @@ type Feature__associated_with_operonEdge {
 type Feature__associated_with_operonConnection {
   edges: [Feature__associated_with_operonEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6364,6 +6374,8 @@ type Transcript__provisional_descriptionEdge {
 type Transcript__provisional_descriptionConnection {
   edges: [Transcript__provisional_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6376,6 +6388,8 @@ type Transcript__rnaseqEdge {
 type Transcript__rnaseqConnection {
   edges: [Transcript__rnaseqEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6388,6 +6402,8 @@ type Gene__expressionEdge {
 type Gene__expressionConnection {
   edges: [Gene__expressionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6400,6 +6416,8 @@ type Clone__negative_geneEdge {
 type Clone__negative_geneConnection {
   edges: [Clone__negative_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6412,6 +6430,8 @@ type TreenodeEdge {
 type TreenodeConnection {
   edges: [TreenodeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6424,6 +6444,8 @@ type Role__phdEdge {
 type Role__phdConnection {
   edges: [Role__phdEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6436,6 +6458,8 @@ type Operon__referenceEdge {
 type Operon__referenceConnection {
   edges: [Operon__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6448,6 +6472,8 @@ type Expr_pattern__life_stageEdge {
 type Expr_pattern__life_stageConnection {
   edges: [Expr_pattern__life_stageEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6460,6 +6486,8 @@ type Rearrangement__phenotype_not_observedEdge {
 type Rearrangement__phenotype_not_observedConnection {
   edges: [Rearrangement__phenotype_not_observedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6472,6 +6500,8 @@ type Reconcellinfo__timepointEdge {
 type Reconcellinfo__timepointConnection {
   edges: [Reconcellinfo__timepointEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6484,6 +6514,8 @@ type Phenotype__primary_nameEdge {
 type Phenotype__primary_nameConnection {
   edges: [Phenotype__primary_nameEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6496,6 +6528,8 @@ type Map__mapEdge {
 type Map__mapConnection {
   edges: [Map__mapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6508,6 +6542,8 @@ type Phenotype_info__cold_sensitiveEdge {
 type Phenotype_info__cold_sensitiveConnection {
   edges: [Phenotype_info__cold_sensitiveEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6520,6 +6556,8 @@ type Expr_profile__remarkEdge {
 type Expr_profile__remarkConnection {
   edges: [Expr_profile__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6532,6 +6570,8 @@ type Gene__corresponding_cdsEdge {
 type Gene__corresponding_cdsConnection {
   edges: [Gene__corresponding_cdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6544,6 +6584,8 @@ type Sequence__overlap_rightEdge {
 type Sequence__overlap_rightConnection {
   edges: [Sequence__overlap_rightEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6556,6 +6598,8 @@ type Operon__split_intoEdge {
 type Operon__split_intoConnection {
   edges: [Operon__split_intoEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6568,6 +6612,8 @@ type TransposonEdge {
 type TransposonConnection {
   edges: [TransposonEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6580,6 +6626,8 @@ type Anatomy_function__geneEdge {
 type Anatomy_function__geneConnection {
   edges: [Anatomy_function__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6592,6 +6640,8 @@ type Locus__remarkEdge {
 type Locus__remarkConnection {
   edges: [Locus__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6604,6 +6654,8 @@ type Motif__databaseEdge {
 type Motif__databaseConnection {
   edges: [Motif__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6616,6 +6668,8 @@ type Clone__does_not_hybridize_toEdge {
 type Clone__does_not_hybridize_toConnection {
   edges: [Clone__does_not_hybridize_toEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6628,6 +6682,8 @@ type Expression_cluster__expr_patternEdge {
 type Expression_cluster__expr_patternConnection {
   edges: [Expression_cluster__expr_patternEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6640,6 +6696,8 @@ type Molecular_change__silentEdge {
 type Molecular_change__silentConnection {
   edges: [Molecular_change__silentEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6652,6 +6710,8 @@ type Multi_counts__alleleEdge {
 type Multi_counts__alleleConnection {
   edges: [Multi_counts__alleleEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6664,6 +6724,8 @@ type Phenotype_info__go_termEdge {
 type Phenotype_info__go_termConnection {
   edges: [Phenotype_info__go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6676,6 +6738,8 @@ type Interaction__regulation_resultEdge {
 type Interaction__regulation_resultConnection {
   edges: [Interaction__regulation_resultEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6688,6 +6752,8 @@ type Method__gene_assemble_methodEdge {
 type Method__gene_assemble_methodConnection {
   edges: [Method__gene_assemble_methodEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6700,6 +6766,8 @@ type Contig__mapEdge {
 type Contig__mapConnection {
   edges: [Contig__mapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6712,6 +6780,8 @@ type Phenotype_info__caused_by_otherEdge {
 type Phenotype_info__caused_by_otherConnection {
   edges: [Phenotype_info__caused_by_otherEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6724,6 +6794,8 @@ type Expr_pattern__not_in_life_stageEdge {
 type Expr_pattern__not_in_life_stageConnection {
   edges: [Expr_pattern__not_in_life_stageEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6736,6 +6808,8 @@ type Gene_classEdge {
 type Gene_classConnection {
   edges: [Gene_classEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6748,6 +6822,8 @@ type Cds__concise_descriptionEdge {
 type Cds__concise_descriptionConnection {
   edges: [Cds__concise_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6760,6 +6836,8 @@ type Gene__legacy_informationEdge {
 type Gene__legacy_informationConnection {
   edges: [Gene__legacy_informationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6772,6 +6850,8 @@ type CdsEdge {
 type CdsConnection {
   edges: [CdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6784,6 +6864,8 @@ type Role__assistant_professorEdge {
 type Role__assistant_professorConnection {
   edges: [Role__assistant_professorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6796,6 +6878,8 @@ type Construct__remarkEdge {
 type Construct__remarkConnection {
   edges: [Construct__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6808,6 +6892,8 @@ type Antibody__historical_geneEdge {
 type Antibody__historical_geneConnection {
   edges: [Antibody__historical_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6820,6 +6906,8 @@ type Grid__sizeEdge {
 type Grid__sizeConnection {
   edges: [Grid__sizeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6832,6 +6920,8 @@ type Anatomy_term__neurodataEdge {
 type Anatomy_term__neurodataConnection {
   edges: [Anatomy_term__neurodataEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6844,6 +6934,8 @@ type Homology_groupEdge {
 type Homology_groupConnection {
   edges: [Homology_groupEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6856,6 +6948,8 @@ type Rearrangement__referenceEdge {
 type Rearrangement__referenceConnection {
   edges: [Rearrangement__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6868,6 +6962,8 @@ type Map__extentEdge {
 type Map__extentConnection {
   edges: [Map__extentEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6880,6 +6976,8 @@ type Two_point_data__complex_mixedEdge {
 type Two_point_data__complex_mixedConnection {
   edges: [Two_point_data__complex_mixedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6892,6 +6990,8 @@ type Rearrangement__gene_insideEdge {
 type Rearrangement__gene_insideConnection {
   edges: [Rearrangement__gene_insideEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6904,6 +7004,8 @@ type Position_matrix__bound_by_gene_productEdge {
 type Position_matrix__bound_by_gene_productConnection {
   edges: [Position_matrix__bound_by_gene_productEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6916,6 +7018,8 @@ type Clone__containsEdge {
 type Clone__containsConnection {
   edges: [Clone__containsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6928,6 +7032,8 @@ type Feature__associated_with_transposonEdge {
 type Feature__associated_with_transposonConnection {
   edges: [Feature__associated_with_transposonEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6940,6 +7046,8 @@ type Microarray_data__remarkEdge {
 type Microarray_data__remarkConnection {
   edges: [Microarray_data__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6952,6 +7060,8 @@ type Two_point_data__backcrossEdge {
 type Two_point_data__backcrossConnection {
   edges: [Two_point_data__backcrossEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6964,6 +7074,8 @@ type Evidence__author_evidenceEdge {
 type Evidence__author_evidenceConnection {
   edges: [Evidence__author_evidenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6976,6 +7088,8 @@ type Molecule__detection_methodEdge {
 type Molecule__detection_methodConnection {
   edges: [Molecule__detection_methodEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -6988,6 +7102,8 @@ type Two_point_data__back_oneEdge {
 type Two_point_data__back_oneConnection {
   edges: [Two_point_data__back_oneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7000,6 +7116,8 @@ type Rearrangement__mapEdge {
 type Rearrangement__mapConnection {
   edges: [Rearrangement__mapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7012,6 +7130,8 @@ type Splice_confirmation__rnaseqEdge {
 type Splice_confirmation__rnaseqConnection {
   edges: [Splice_confirmation__rnaseqEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7024,6 +7144,8 @@ type Neurodata__send_jointEdge {
 type Neurodata__send_jointConnection {
   edges: [Neurodata__send_jointEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7036,6 +7158,8 @@ type Grid_dataEdge {
 type Grid_dataConnection {
   edges: [Grid_dataEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7048,6 +7172,8 @@ type Variation__mutagenEdge {
 type Variation__mutagenConnection {
   edges: [Variation__mutagenEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7060,6 +7186,8 @@ type Variation__polymorphic_strain_digestEdge {
 type Variation__polymorphic_strain_digestConnection {
   edges: [Variation__polymorphic_strain_digestEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7072,6 +7200,8 @@ type Structure_data__databaseEdge {
 type Structure_data__databaseConnection {
   edges: [Structure_data__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7084,6 +7214,8 @@ type Two_point_data__selected_transEdge {
 type Two_point_data__selected_transConnection {
   edges: [Two_point_data__selected_transEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7096,6 +7228,8 @@ type Phenotype_info__variation_effectEdge {
 type Phenotype_info__variation_effectConnection {
   edges: [Phenotype_info__variation_effectEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7108,6 +7242,8 @@ type Gene__molecular_functionEdge {
 type Gene__molecular_functionConnection {
   edges: [Gene__molecular_functionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7120,6 +7256,8 @@ type Molecular_change__nonsenseEdge {
 type Molecular_change__nonsenseConnection {
   edges: [Molecular_change__nonsenseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7132,6 +7270,8 @@ type Expr_pattern__not_in_go_termEdge {
 type Expr_pattern__not_in_go_termConnection {
   edges: [Expr_pattern__not_in_go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7144,6 +7284,8 @@ type Grid__space_atEdge {
 type Grid__space_atConnection {
   edges: [Grid__space_atEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7156,6 +7298,8 @@ type Anatomy_term__termEdge {
 type Anatomy_term__termConnection {
   edges: [Anatomy_term__termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7168,6 +7312,8 @@ type Interaction__interactor_overlapping_geneEdge {
 type Interaction__interactor_overlapping_geneConnection {
   edges: [Interaction__interactor_overlapping_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7180,6 +7326,8 @@ type Go_annotation__life_stage_relationEdge {
 type Go_annotation__life_stage_relationConnection {
   edges: [Go_annotation__life_stage_relationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7192,6 +7340,8 @@ type Anatomy_function__phenotypeEdge {
 type Anatomy_function__phenotypeConnection {
   edges: [Anatomy_function__phenotypeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7204,6 +7354,8 @@ type Expr_pattern__remarkEdge {
 type Expr_pattern__remarkConnection {
   edges: [Expr_pattern__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7216,6 +7368,8 @@ type Microarray_resultsEdge {
 type Microarray_resultsConnection {
   edges: [Microarray_resultsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7228,6 +7382,8 @@ type Db__exciseEdge {
 type Db__exciseConnection {
   edges: [Db__exciseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7240,6 +7396,8 @@ type Wbprocess__historical_geneEdge {
 type Wbprocess__historical_geneConnection {
   edges: [Wbprocess__historical_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7252,6 +7410,8 @@ type PictureEdge {
 type PictureConnection {
   edges: [PictureEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7264,6 +7424,8 @@ type Rnai__databaseEdge {
 type Rnai__databaseConnection {
   edges: [Rnai__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7276,6 +7438,8 @@ type Feature__associated_with_geneEdge {
 type Feature__associated_with_geneConnection {
   edges: [Feature__associated_with_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7288,6 +7452,8 @@ type Go_code__remarkEdge {
 type Go_code__remarkConnection {
   edges: [Go_code__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7300,6 +7466,8 @@ type Variation__databaseEdge {
 type Variation__databaseConnection {
   edges: [Variation__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7312,6 +7480,8 @@ type Movie__variationEdge {
 type Movie__variationConnection {
   edges: [Movie__variationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7324,6 +7494,8 @@ type Motif__db_remarkEdge {
 type Motif__db_remarkConnection {
   edges: [Motif__db_remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7336,6 +7508,8 @@ type Wbprocess__go_termEdge {
 type Wbprocess__go_termConnection {
   edges: [Wbprocess__go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7348,6 +7522,8 @@ type Sequence_collection__statusEdge {
 type Sequence_collection__statusConnection {
   edges: [Sequence_collection__statusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7360,6 +7536,8 @@ type Antibody__referenceEdge {
 type Antibody__referenceConnection {
   edges: [Antibody__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7372,6 +7550,8 @@ type DbEdge {
 type DbConnection {
   edges: [DbEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7384,6 +7564,8 @@ type Variation__possibly_affectsEdge {
 type Variation__possibly_affectsConnection {
   edges: [Variation__possibly_affectsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7396,6 +7578,8 @@ type Multi_counts__transgeneEdge {
 type Multi_counts__transgeneConnection {
   edges: [Multi_counts__transgeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7408,6 +7592,8 @@ type Construct__laboratoryEdge {
 type Construct__laboratoryConnection {
   edges: [Construct__laboratoryEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7420,6 +7606,8 @@ type Rnai__phenotype_not_observedEdge {
 type Rnai__phenotype_not_observedConnection {
   edges: [Rnai__phenotype_not_observedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7432,6 +7620,8 @@ type Cds__db_remarkEdge {
 type Cds__db_remarkConnection {
   edges: [Cds__db_remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7444,6 +7634,8 @@ type Feature__associated_with_cdsEdge {
 type Feature__associated_with_cdsConnection {
   edges: [Feature__associated_with_cdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7456,6 +7648,8 @@ type Person__worked_withEdge {
 type Person__worked_withConnection {
   edges: [Person__worked_withEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7468,6 +7662,8 @@ type Gene__disease_relevanceEdge {
 type Gene__disease_relevanceConnection {
   edges: [Gene__disease_relevanceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7480,6 +7676,8 @@ type Oligo_set__target_exonsEdge {
 type Oligo_set__target_exonsConnection {
   edges: [Oligo_set__target_exonsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7492,6 +7690,8 @@ type Clone__typeEdge {
 type Clone__typeConnection {
   edges: [Clone__typeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7504,6 +7704,8 @@ type Method__gff_soEdge {
 type Method__gff_soConnection {
   edges: [Method__gff_soEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7516,6 +7718,8 @@ type Gene__functional_pathwayEdge {
 type Gene__functional_pathwayConnection {
   edges: [Gene__functional_pathwayEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7528,6 +7732,8 @@ type Molecule__statusEdge {
 type Molecule__statusConnection {
   edges: [Molecule__statusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7540,6 +7746,8 @@ type Clone__inside_rearrEdge {
 type Clone__inside_rearrConnection {
   edges: [Clone__inside_rearrEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7552,6 +7760,8 @@ type Map_position__positionEdge {
 type Map_position__positionConnection {
   edges: [Map_position__positionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7564,6 +7774,8 @@ type Pos_neg_data__remarkEdge {
 type Pos_neg_data__remarkConnection {
   edges: [Pos_neg_data__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7576,6 +7788,8 @@ type Method__intron_costEdge {
 type Method__intron_costConnection {
   edges: [Method__intron_costEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7588,6 +7802,8 @@ type Gene_clusterEdge {
 type Gene_clusterConnection {
   edges: [Gene_clusterEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7600,6 +7816,8 @@ type Gene__disease_experimental_modelEdge {
 type Gene__disease_experimental_modelConnection {
   edges: [Gene__disease_experimental_modelEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7612,6 +7830,8 @@ type Do_term__databaseEdge {
 type Do_term__databaseConnection {
   edges: [Do_term__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7624,6 +7844,8 @@ type Rnai__pseudogeneEdge {
 type Rnai__pseudogeneConnection {
   edges: [Rnai__pseudogeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7636,6 +7858,8 @@ type Feature__associated_with_variationEdge {
 type Feature__associated_with_variationConnection {
   edges: [Feature__associated_with_variationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7648,6 +7872,8 @@ type Rearrangement__phenotypeEdge {
 type Rearrangement__phenotypeConnection {
   edges: [Rearrangement__phenotypeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7660,6 +7886,8 @@ type Pseudogene__concise_descriptionEdge {
 type Pseudogene__concise_descriptionConnection {
   edges: [Pseudogene__concise_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7672,6 +7900,8 @@ type Feature__associated_with_position_matrixEdge {
 type Feature__associated_with_position_matrixConnection {
   edges: [Feature__associated_with_position_matrixEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7684,6 +7914,8 @@ type Two_point_data__remarkEdge {
 type Two_point_data__remarkConnection {
   edges: [Two_point_data__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7696,6 +7928,8 @@ type ContigEdge {
 type ContigConnection {
   edges: [ContigEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7708,6 +7942,8 @@ type Paper__not_personEdge {
 type Paper__not_personConnection {
   edges: [Paper__not_personEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7720,6 +7956,8 @@ type Strain__phenotype_not_observedEdge {
 type Strain__phenotype_not_observedConnection {
   edges: [Strain__phenotype_not_observedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7732,6 +7970,8 @@ type Protein__databaseEdge {
 type Protein__databaseConnection {
   edges: [Protein__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7744,6 +7984,8 @@ type Gene__corresponding_transcriptEdge {
 type Gene__corresponding_transcriptConnection {
   edges: [Gene__corresponding_transcriptEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7756,6 +7998,8 @@ type Sage_tagEdge {
 type Sage_tagConnection {
   edges: [Sage_tagEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7768,6 +8012,8 @@ type Pos_neg_dataEdge {
 type Pos_neg_dataConnection {
   edges: [Pos_neg_dataEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7780,6 +8026,8 @@ type Construct__driven_by_geneEdge {
 type Construct__driven_by_geneConnection {
   edges: [Construct__driven_by_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7792,6 +8040,8 @@ type CloneEdge {
 type CloneConnection {
   edges: [CloneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7804,6 +8054,8 @@ type Transcript__databaseEdge {
 type Transcript__databaseConnection {
   edges: [Transcript__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7816,6 +8068,8 @@ type Phenotype_info__control_strainEdge {
 type Phenotype_info__control_strainConnection {
   edges: [Phenotype_info__control_strainEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7828,6 +8082,8 @@ type Variation__deletionEdge {
 type Variation__deletionConnection {
   edges: [Variation__deletionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7840,6 +8096,8 @@ type Expr_pattern__db_infoEdge {
 type Expr_pattern__db_infoConnection {
   edges: [Expr_pattern__db_infoEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7852,6 +8110,8 @@ type Feature__defined_by_paperEdge {
 type Feature__defined_by_paperConnection {
   edges: [Feature__defined_by_paperEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7864,6 +8124,8 @@ type Phenotype_info__strainEdge {
 type Phenotype_info__strainConnection {
   edges: [Phenotype_info__strainEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7876,6 +8138,8 @@ type Evidence__accession_evidenceEdge {
 type Evidence__accession_evidenceConnection {
   edges: [Evidence__accession_evidenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7888,6 +8152,8 @@ type Anatomy_termEdge {
 type Anatomy_termConnection {
   edges: [Anatomy_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7900,6 +8166,8 @@ type Two_point_data__sex_cisEdge {
 type Two_point_data__sex_cisConnection {
   edges: [Two_point_data__sex_cisEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7912,6 +8180,8 @@ type Multi_pt_data__gene_aEdge {
 type Multi_pt_data__gene_aConnection {
   edges: [Multi_pt_data__gene_aEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7924,6 +8194,8 @@ type Molecule__databaseEdge {
 type Molecule__databaseConnection {
   edges: [Molecule__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7936,6 +8208,8 @@ type Anatomy_term__databaseEdge {
 type Anatomy_term__databaseConnection {
   edges: [Anatomy_term__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7948,6 +8222,8 @@ type Gene__mapEdge {
 type Gene__mapConnection {
   edges: [Gene__mapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7960,6 +8236,8 @@ type WbprocessEdge {
 type WbprocessConnection {
   edges: [WbprocessEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7972,6 +8250,8 @@ type Multi_pt_data__gene_bEdge {
 type Multi_pt_data__gene_bConnection {
   edges: [Multi_pt_data__gene_bEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7984,6 +8264,8 @@ type Strain__geolocationEdge {
 type Strain__geolocationConnection {
   edges: [Strain__geolocationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -7996,6 +8278,8 @@ type Laboratory__remarkEdge {
 type Laboratory__remarkConnection {
   edges: [Laboratory__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8008,6 +8292,8 @@ type Transgene__mapEdge {
 type Transgene__mapConnection {
   edges: [Transgene__mapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8020,6 +8306,8 @@ type Transcript__referenceEdge {
 type Transcript__referenceConnection {
   edges: [Transcript__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8032,6 +8320,8 @@ type Anatomy_function__remarkEdge {
 type Anatomy_function__remarkConnection {
   edges: [Anatomy_function__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8044,6 +8334,8 @@ type Variation__reference_strain_digestEdge {
 type Variation__reference_strain_digestConnection {
   edges: [Variation__reference_strain_digestEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8056,6 +8348,8 @@ type Rearrangement__mutagenEdge {
 type Rearrangement__mutagenConnection {
   edges: [Rearrangement__mutagenEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8068,6 +8362,8 @@ type Wbprocess__databaseEdge {
 type Wbprocess__databaseConnection {
   edges: [Wbprocess__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8080,6 +8376,8 @@ type Phenotype_info__anatomy_termEdge {
 type Phenotype_info__anatomy_termConnection {
   edges: [Phenotype_info__anatomy_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8092,6 +8390,8 @@ type Oligo_set__overlaps_pseudogeneEdge {
 type Oligo_set__overlaps_pseudogeneConnection {
   edges: [Oligo_set__overlaps_pseudogeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8104,6 +8404,8 @@ type Interaction__rearrangementEdge {
 type Interaction__rearrangementConnection {
   edges: [Interaction__rearrangementEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8116,6 +8418,8 @@ type Construct__historical_geneEdge {
 type Construct__historical_geneConnection {
   edges: [Construct__historical_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8128,6 +8432,8 @@ type Microarray_experiment__remarkEdge {
 type Microarray_experiment__remarkConnection {
   edges: [Microarray_experiment__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8140,6 +8446,8 @@ type Go_annotation__molecule_relationEdge {
 type Go_annotation__molecule_relationConnection {
   edges: [Go_annotation__molecule_relationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8152,6 +8460,8 @@ type Map__centreEdge {
 type Map__centreConnection {
   edges: [Map__centreEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8164,6 +8474,8 @@ type Variation__transcriptEdge {
 type Variation__transcriptConnection {
   edges: [Variation__transcriptEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8176,6 +8488,8 @@ type Two_point_data__one_allEdge {
 type Two_point_data__one_allConnection {
   edges: [Two_point_data__one_allEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8188,6 +8502,8 @@ type Mixed_grid_row__cloneEdge {
 type Mixed_grid_row__cloneConnection {
   edges: [Mixed_grid_row__cloneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8200,6 +8516,8 @@ type Sage_tag__transcriptEdge {
 type Sage_tag__transcriptConnection {
   edges: [Sage_tag__transcriptEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8212,6 +8530,8 @@ type Expr_pattern__geneEdge {
 type Expr_pattern__geneConnection {
   edges: [Expr_pattern__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8224,6 +8544,8 @@ type Transgene__marker_forEdge {
 type Transgene__marker_forConnection {
   edges: [Transgene__marker_forEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8236,6 +8558,8 @@ type Pseudogene__last_reviewedEdge {
 type Pseudogene__last_reviewedConnection {
   edges: [Pseudogene__last_reviewedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8248,6 +8572,8 @@ type Variation__hermaphrodite_mating_efficiencyEdge {
 type Variation__hermaphrodite_mating_efficiencyConnection {
   edges: [Variation__hermaphrodite_mating_efficiencyEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8260,6 +8586,8 @@ type Feature_dataEdge {
 type Feature_dataConnection {
   edges: [Feature_dataEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8272,6 +8600,8 @@ type Sequence__archivedEdge {
 type Sequence__archivedConnection {
   edges: [Sequence__archivedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8284,6 +8614,8 @@ type Wbprocess__movieEdge {
 type Wbprocess__movieConnection {
   edges: [Wbprocess__movieEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8296,6 +8628,8 @@ type Transcript__db_remarkEdge {
 type Transcript__db_remarkConnection {
   edges: [Transcript__db_remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8308,6 +8642,8 @@ type SpeciesEdge {
 type SpeciesConnection {
   edges: [SpeciesEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8320,6 +8656,8 @@ type Go_annotationEdge {
 type Go_annotationConnection {
   edges: [Go_annotationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8332,6 +8670,8 @@ type PseudogeneEdge {
 type PseudogeneConnection {
   edges: [PseudogeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8344,6 +8684,8 @@ type Antibody__antibody_for_diseaseEdge {
 type Antibody__antibody_for_diseaseConnection {
   edges: [Antibody__antibody_for_diseaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8356,6 +8698,8 @@ type Variation__geneEdge {
 type Variation__geneConnection {
   edges: [Variation__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8368,6 +8712,8 @@ type Role__highschoolEdge {
 type Role__highschoolConnection {
   edges: [Role__highschoolEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8380,6 +8726,8 @@ type Feature__source_locationEdge {
 type Feature__source_locationConnection {
   edges: [Feature__source_locationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8392,6 +8740,8 @@ type Multi_pt_data__geneEdge {
 type Multi_pt_data__geneConnection {
   edges: [Multi_pt_data__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8404,6 +8754,8 @@ type Clone__pmapEdge {
 type Clone__pmapConnection {
   edges: [Clone__pmapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8416,6 +8768,8 @@ type Interaction__historical_geneEdge {
 type Interaction__historical_geneConnection {
   edges: [Interaction__historical_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8428,6 +8782,8 @@ type Feature__associated_with_transcriptEdge {
 type Feature__associated_with_transcriptConnection {
   edges: [Feature__associated_with_transcriptEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8440,6 +8796,8 @@ type Clone__canonical_forEdge {
 type Clone__canonical_forConnection {
   edges: [Clone__canonical_forEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8452,6 +8810,8 @@ type RearrangementEdge {
 type RearrangementConnection {
   edges: [RearrangementEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8464,6 +8824,8 @@ type Phenotype__assayEdge {
 type Phenotype__assayConnection {
   edges: [Phenotype__assayEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8476,6 +8838,8 @@ type Anatomy_functionEdge {
 type Anatomy_functionConnection {
   edges: [Anatomy_functionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8488,6 +8852,8 @@ type Rnai__geneEdge {
 type Rnai__geneConnection {
   edges: [Rnai__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8500,6 +8866,8 @@ type Movie__remarkEdge {
 type Movie__remarkConnection {
   edges: [Movie__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8512,6 +8880,8 @@ type Locus__snp_assayEdge {
 type Locus__snp_assayConnection {
   edges: [Locus__snp_assayEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8524,6 +8894,8 @@ type Phenotype_info__caused_by_geneEdge {
 type Phenotype_info__caused_by_geneConnection {
   edges: [Phenotype_info__caused_by_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8536,6 +8908,8 @@ type Transgene__referenceEdge {
 type Transgene__referenceConnection {
   edges: [Transgene__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8548,6 +8922,8 @@ type Anatomy_function__assayEdge {
 type Anatomy_function__assayConnection {
   edges: [Anatomy_function__assayEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8560,6 +8936,8 @@ type ConstructEdge {
 type ConstructConnection {
   edges: [ConstructEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8572,6 +8950,8 @@ type Antibody__remarkEdge {
 type Antibody__remarkConnection {
   edges: [Antibody__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8584,6 +8964,8 @@ type Picture__remarkEdge {
 type Picture__remarkConnection {
   edges: [Picture__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8596,6 +8978,8 @@ type Cds__databaseEdge {
 type Cds__databaseConnection {
   edges: [Cds__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8608,6 +8992,8 @@ type Role__sabbaticalEdge {
 type Role__sabbaticalConnection {
   edges: [Role__sabbaticalEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8620,6 +9006,8 @@ type VariationEdge {
 type VariationConnection {
   edges: [VariationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8632,6 +9020,8 @@ type Rnai__remarkEdge {
 type Rnai__remarkConnection {
   edges: [Rnai__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8644,6 +9034,8 @@ type Pcr_productEdge {
 type Pcr_productConnection {
   edges: [Pcr_productEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8656,6 +9048,8 @@ type Paper__remarkEdge {
 type Paper__remarkConnection {
   edges: [Paper__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8668,6 +9062,8 @@ type LibraryEdge {
 type LibraryConnection {
   edges: [LibraryEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8680,6 +9076,8 @@ type Anatomy_term__go_termEdge {
 type Anatomy_term__go_termConnection {
   edges: [Anatomy_term__go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8692,6 +9090,8 @@ type Molecule__affects_phenotype_of_strainEdge {
 type Molecule__affects_phenotype_of_strainConnection {
   edges: [Molecule__affects_phenotype_of_strainEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8704,6 +9104,8 @@ type Go_annotation__annotation_isoformEdge {
 type Go_annotation__annotation_isoformConnection {
   edges: [Go_annotation__annotation_isoformEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8716,6 +9118,8 @@ type Ao_code__remarkEdge {
 type Ao_code__remarkConnection {
   edges: [Ao_code__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8728,6 +9132,8 @@ type Sequence_collection__databaseEdge {
 type Sequence_collection__databaseConnection {
   edges: [Sequence_collection__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8740,6 +9146,8 @@ type DnaEdge {
 type DnaConnection {
   edges: [DnaEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8752,6 +9160,8 @@ type Sequence__db_remarkEdge {
 type Sequence__db_remarkConnection {
   edges: [Sequence__db_remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8764,6 +9174,8 @@ type Interaction__sequence_interactorEdge {
 type Interaction__sequence_interactorConnection {
   edges: [Interaction__sequence_interactorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8776,6 +9188,8 @@ type Molecule__useEdge {
 type Molecule__useConnection {
   edges: [Molecule__useEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8788,6 +9202,8 @@ type Interaction__interactor_overlapping_cdsEdge {
 type Interaction__interactor_overlapping_cdsConnection {
   edges: [Interaction__interactor_overlapping_cdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8800,6 +9216,8 @@ type Variation__expr_patternEdge {
 type Variation__expr_patternConnection {
   edges: [Variation__expr_patternEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8812,6 +9230,8 @@ type Interaction__pcr_interactorEdge {
 type Interaction__pcr_interactorConnection {
   edges: [Interaction__pcr_interactorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8824,6 +9244,8 @@ type Person__databaseEdge {
 type Person__databaseConnection {
   edges: [Person__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8836,6 +9258,8 @@ type Map_position__with_locusEdge {
 type Map_position__with_locusConnection {
   edges: [Map_position__with_locusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8848,6 +9272,8 @@ type Expr_pattern__historical_geneEdge {
 type Expr_pattern__historical_geneConnection {
   edges: [Expr_pattern__historical_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8860,6 +9286,8 @@ type Database_fieldEdge {
 type Database_fieldConnection {
   edges: [Database_fieldEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8872,6 +9300,8 @@ type Feature__defined_by_analysisEdge {
 type Feature__defined_by_analysisConnection {
   edges: [Feature__defined_by_analysisEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8884,6 +9314,8 @@ type Gene__corresponding_transposonEdge {
 type Gene__corresponding_transposonConnection {
   edges: [Gene__corresponding_transposonEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8896,6 +9328,8 @@ type Mass_spec_peptide__mass_spec_experimentsEdge {
 type Mass_spec_peptide__mass_spec_experimentsConnection {
   edges: [Mass_spec_peptide__mass_spec_experimentsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8908,6 +9342,8 @@ type Role__unknownEdge {
 type Role__unknownConnection {
   edges: [Role__unknownEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8920,6 +9356,8 @@ type Cds__detailed_descriptionEdge {
 type Cds__detailed_descriptionConnection {
   edges: [Cds__detailed_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8932,6 +9370,8 @@ type Phenotype_info__ease_of_scoringEdge {
 type Phenotype_info__ease_of_scoringConnection {
   edges: [Phenotype_info__ease_of_scoringEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8944,6 +9384,8 @@ type Microarray_results__minEdge {
 type Microarray_results__minConnection {
   edges: [Microarray_results__minEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8956,6 +9398,8 @@ type Transcript__remarkEdge {
 type Transcript__remarkConnection {
   edges: [Transcript__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8968,6 +9412,8 @@ type Analysis__databaseEdge {
 type Analysis__databaseConnection {
   edges: [Analysis__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8980,6 +9426,8 @@ type Multi_pt_data__remarkEdge {
 type Multi_pt_data__remarkConnection {
   edges: [Multi_pt_data__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -8992,6 +9440,8 @@ type Sage_experimentEdge {
 type Sage_experimentConnection {
   edges: [Sage_experimentEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9004,6 +9454,8 @@ type Db__sysEdge {
 type Db__sysConnection {
   edges: [Db__sysEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9016,6 +9468,8 @@ type Transposon__ltr_regionEdge {
 type Transposon__ltr_regionConnection {
   edges: [Transposon__ltr_regionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9028,6 +9482,8 @@ type Antibody__summaryEdge {
 type Antibody__summaryConnection {
   edges: [Antibody__summaryEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9040,6 +9496,8 @@ type Two_point_data__dom_selectedEdge {
 type Two_point_data__dom_selectedConnection {
   edges: [Two_point_data__dom_selectedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9052,6 +9510,8 @@ type Wbprocess__do_termEdge {
 type Wbprocess__do_termConnection {
   edges: [Wbprocess__do_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9064,6 +9524,8 @@ type Oligo_set__remarkEdge {
 type Oligo_set__remarkConnection {
   edges: [Oligo_set__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9076,6 +9538,8 @@ type Antibody__geneEdge {
 type Antibody__geneConnection {
   edges: [Antibody__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9088,6 +9552,8 @@ type Cds__cds_predicted_byEdge {
 type Cds__cds_predicted_byConnection {
   edges: [Cds__cds_predicted_byEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9100,6 +9566,8 @@ type Pseudogene__db_remarkEdge {
 type Pseudogene__db_remarkConnection {
   edges: [Pseudogene__db_remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9112,6 +9580,8 @@ type Molecular_change__missenseEdge {
 type Molecular_change__missenseConnection {
   edges: [Molecular_change__missenseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9124,6 +9594,8 @@ type Role__undergradEdge {
 type Role__undergradConnection {
   edges: [Role__undergradEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9136,6 +9608,8 @@ type Map_position__multi_endsEdge {
 type Map_position__multi_endsConnection {
   edges: [Map_position__multi_endsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9148,6 +9622,8 @@ type Variation__forward_geneticsEdge {
 type Variation__forward_geneticsConnection {
   edges: [Variation__forward_geneticsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9160,6 +9636,8 @@ type Multi_pt_data__locus_bEdge {
 type Multi_pt_data__locus_bConnection {
   edges: [Multi_pt_data__locus_bEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9172,6 +9650,8 @@ type Multi_pt_data__locus_aEdge {
 type Multi_pt_data__locus_aConnection {
   edges: [Multi_pt_data__locus_aEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9184,6 +9664,8 @@ type Operon__merged_intoEdge {
 type Operon__merged_intoConnection {
   edges: [Operon__merged_intoEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9196,6 +9678,8 @@ type Variation__reverse_geneticsEdge {
 type Variation__reverse_geneticsConnection {
   edges: [Variation__reverse_geneticsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9208,6 +9692,8 @@ type Sequence__from_databaseEdge {
 type Sequence__from_databaseConnection {
   edges: [Sequence__from_databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9220,6 +9706,8 @@ type MapEdge {
 type MapConnection {
   edges: [MapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9232,6 +9720,8 @@ type MovieEdge {
 type MovieConnection {
   edges: [MovieEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9244,6 +9734,8 @@ type Microarray_results__transcriptEdge {
 type Microarray_results__transcriptConnection {
   edges: [Microarray_results__transcriptEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9256,6 +9748,8 @@ type KeywordEdge {
 type KeywordConnection {
   edges: [KeywordEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9268,6 +9762,8 @@ type Transcript__source_exonsEdge {
 type Transcript__source_exonsConnection {
   edges: [Transcript__source_exonsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9280,6 +9776,8 @@ type Two_point_data__testedEdge {
 type Two_point_data__testedConnection {
   edges: [Two_point_data__testedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9292,6 +9790,8 @@ type Pseudogene__typeEdge {
 type Pseudogene__typeConnection {
   edges: [Pseudogene__typeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9304,6 +9804,8 @@ type Expr_patternEdge {
 type Expr_patternConnection {
   edges: [Expr_patternEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9316,6 +9818,8 @@ type AuthorEdge {
 type AuthorConnection {
   edges: [AuthorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9328,6 +9832,8 @@ type Operon__remarkEdge {
 type Operon__remarkConnection {
   edges: [Operon__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9340,6 +9846,8 @@ type Variation__source_locationEdge {
 type Variation__source_locationConnection {
   edges: [Variation__source_locationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9352,6 +9860,8 @@ type ConditionEdge {
 type ConditionConnection {
   edges: [ConditionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9364,6 +9874,8 @@ type Rearrangement__balancesEdge {
 type Rearrangement__balancesConnection {
   edges: [Rearrangement__balancesEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9376,6 +9888,8 @@ type Anatomy_term__synonymEdge {
 type Anatomy_term__synonymConnection {
   edges: [Anatomy_term__synonymEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9388,6 +9902,8 @@ type Phenotype_info__temperatureEdge {
 type Phenotype_info__temperatureConnection {
   edges: [Phenotype_info__temperatureEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9400,6 +9916,8 @@ type Sequence__dnaEdge {
 type Sequence__dnaConnection {
   edges: [Sequence__dnaEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9412,6 +9930,8 @@ type Phenotype_info__completeEdge {
 type Phenotype_info__completeConnection {
   edges: [Phenotype_info__completeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9424,6 +9944,8 @@ type Sequence__interpolated_map_positionEdge {
 type Sequence__interpolated_map_positionConnection {
   edges: [Sequence__interpolated_map_positionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9436,6 +9958,8 @@ type Clone__positive_variationEdge {
 type Clone__positive_variationConnection {
   edges: [Clone__positive_variationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9448,6 +9972,8 @@ type Position_matrix__transcription_factorEdge {
 type Position_matrix__transcription_factorConnection {
   edges: [Position_matrix__transcription_factorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9460,6 +9986,8 @@ type Strain__locationEdge {
 type Strain__locationConnection {
   edges: [Strain__locationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9472,6 +10000,8 @@ type Structure_dataEdge {
 type Structure_dataConnection {
   edges: [Structure_dataEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9484,6 +10014,8 @@ type Clone__outside_rearrEdge {
 type Clone__outside_rearrConnection {
   edges: [Clone__outside_rearrEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9496,6 +10028,8 @@ type HomologyEdge {
 type HomologyConnection {
   edges: [HomologyEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9508,6 +10042,8 @@ type Clone__negative_locusEdge {
 type Clone__negative_locusConnection {
   edges: [Clone__negative_locusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9520,6 +10056,8 @@ type LongtextEdge {
 type LongtextConnection {
   edges: [LongtextEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9532,6 +10070,8 @@ type Position_matrix__consensusEdge {
 type Position_matrix__consensusConnection {
   edges: [Position_matrix__consensusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9544,6 +10084,8 @@ type Feature__associated_with_featureEdge {
 type Feature__associated_with_featureConnection {
   edges: [Feature__associated_with_featureEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9556,6 +10098,8 @@ type Wbprocess__remarkEdge {
 type Wbprocess__remarkConnection {
   edges: [Wbprocess__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9568,6 +10112,8 @@ type Feature__deprecatedEdge {
 type Feature__deprecatedConnection {
   edges: [Feature__deprecatedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9580,6 +10126,8 @@ type Wbprocess__anatomy_termEdge {
 type Wbprocess__anatomy_termConnection {
   edges: [Wbprocess__anatomy_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9592,6 +10140,8 @@ type Feature__merged_intoEdge {
 type Feature__merged_intoConnection {
   edges: [Feature__merged_intoEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9604,6 +10154,8 @@ type Pseudogene__brief_identificationEdge {
 type Pseudogene__brief_identificationConnection {
   edges: [Pseudogene__brief_identificationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9616,6 +10168,8 @@ type Microarray_results__remarkEdge {
 type Microarray_results__remarkConnection {
   edges: [Microarray_results__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9628,6 +10182,8 @@ type Transcript__matching_cdnaEdge {
 type Transcript__matching_cdnaConnection {
   edges: [Transcript__matching_cdnaEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9640,6 +10196,8 @@ type Expression_cluster__microarray_resultsEdge {
 type Expression_cluster__microarray_resultsConnection {
   edges: [Expression_cluster__microarray_resultsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9652,6 +10210,8 @@ type Grid__rowEdge {
 type Grid__rowConnection {
   edges: [Grid__rowEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9664,6 +10224,8 @@ type Phenotype__remarkEdge {
 type Phenotype__remarkConnection {
   edges: [Phenotype__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9676,6 +10238,8 @@ type Neuro_location__sectionEdge {
 type Neuro_location__sectionConnection {
   edges: [Neuro_location__sectionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9688,6 +10252,8 @@ type Wbprocess__gene_clusterEdge {
 type Wbprocess__gene_clusterConnection {
   edges: [Wbprocess__gene_clusterEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9700,6 +10266,8 @@ type Two_point_data__gene_1Edge {
 type Two_point_data__gene_1Connection {
   edges: [Two_point_data__gene_1Edge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9712,6 +10280,8 @@ type Two_point_data__gene_2Edge {
 type Two_point_data__gene_2Connection {
   edges: [Two_point_data__gene_2Edge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9724,6 +10294,8 @@ type Protein__peptideEdge {
 type Protein__peptideConnection {
   edges: [Protein__peptideEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9736,6 +10308,8 @@ type Sequence__clone_left_endEdge {
 type Sequence__clone_left_endConnection {
   edges: [Sequence__clone_left_endEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9748,6 +10322,8 @@ type Role__research_staffEdge {
 type Role__research_staffConnection {
   edges: [Role__research_staffEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9760,6 +10336,8 @@ type Strain__remarkEdge {
 type Strain__remarkConnection {
   edges: [Strain__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9772,6 +10350,8 @@ type Sequence__remarkEdge {
 type Sequence__remarkConnection {
   edges: [Sequence__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9784,6 +10364,8 @@ type Go_annotation__anatomy_relationEdge {
 type Go_annotation__anatomy_relationConnection {
   edges: [Go_annotation__anatomy_relationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9796,6 +10378,8 @@ type Transposon__copy_statusEdge {
 type Transposon__copy_statusConnection {
   edges: [Transposon__copy_statusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9808,6 +10392,8 @@ type Phenotype__do_termEdge {
 type Phenotype__do_termConnection {
   edges: [Phenotype__do_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9820,6 +10406,8 @@ type Gene__paralogEdge {
 type Gene__paralogConnection {
   edges: [Gene__paralogEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9832,6 +10420,8 @@ type Wbprocess__geneEdge {
 type Wbprocess__geneConnection {
   edges: [Wbprocess__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9844,6 +10434,8 @@ type Gene_class__remarkEdge {
 type Gene_class__remarkConnection {
   edges: [Gene_class__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9856,6 +10448,8 @@ type Cds__source_exonsEdge {
 type Cds__source_exonsConnection {
   edges: [Cds__source_exonsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9868,6 +10462,8 @@ type Two_point_data__directEdge {
 type Two_point_data__directConnection {
   edges: [Two_point_data__directEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9880,6 +10476,8 @@ type Two_point_data__dom_semiEdge {
 type Two_point_data__dom_semiConnection {
   edges: [Two_point_data__dom_semiEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9892,6 +10490,8 @@ type Phenotype_info__maternalEdge {
 type Phenotype_info__maternalConnection {
   edges: [Phenotype_info__maternalEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9904,6 +10504,8 @@ type Strain__other_nameEdge {
 type Strain__other_nameConnection {
   edges: [Strain__other_nameEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9916,6 +10518,8 @@ type Construct__databaseEdge {
 type Construct__databaseConnection {
   edges: [Construct__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9928,6 +10532,8 @@ type Gene__other_sequenceEdge {
 type Gene__other_sequenceConnection {
   edges: [Gene__other_sequenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9940,6 +10546,8 @@ type Pseudogene__detailed_descriptionEdge {
 type Pseudogene__detailed_descriptionConnection {
   edges: [Pseudogene__detailed_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9952,6 +10560,8 @@ type Transposon_family__remarkEdge {
 type Transposon_family__remarkConnection {
   edges: [Transposon_family__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9964,6 +10574,8 @@ type Sequence__mapEdge {
 type Sequence__mapConnection {
   edges: [Sequence__mapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9976,6 +10588,8 @@ type ReconstructionEdge {
 type ReconstructionConnection {
   edges: [ReconstructionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -9988,6 +10602,8 @@ type Oligo__pairwise_scoresEdge {
 type Oligo__pairwise_scoresConnection {
   edges: [Oligo__pairwise_scoresEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10000,6 +10616,8 @@ type Variation__predicted_cdsEdge {
 type Variation__predicted_cdsConnection {
   edges: [Variation__predicted_cdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10012,6 +10630,8 @@ type Variation__deletion_verificationEdge {
 type Variation__deletion_verificationConnection {
   edges: [Variation__deletion_verificationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10024,6 +10644,8 @@ type Transposon_family__db_annotationEdge {
 type Transposon_family__db_annotationConnection {
   edges: [Transposon_family__db_annotationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10036,6 +10658,8 @@ type ImporterEdge {
 type ImporterConnection {
   edges: [ImporterEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10048,6 +10672,8 @@ type Life_stageEdge {
 type Life_stageConnection {
   edges: [Life_stageEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10060,6 +10686,8 @@ type Gene__provisional_descriptionEdge {
 type Gene__provisional_descriptionConnection {
   edges: [Gene__provisional_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10072,6 +10700,8 @@ type Map_position__rightEdge {
 type Map_position__rightConnection {
   edges: [Map_position__rightEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10084,6 +10714,8 @@ type Gene__rnaseqEdge {
 type Gene__rnaseqConnection {
   edges: [Gene__rnaseqEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10096,6 +10728,8 @@ type Person__last_attempt_to_contactEdge {
 type Person__last_attempt_to_contactConnection {
   edges: [Person__last_attempt_to_contactEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10108,6 +10742,8 @@ type Protein__molecular_weightEdge {
 type Protein__molecular_weightConnection {
   edges: [Protein__molecular_weightEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10120,6 +10756,8 @@ type Ace2soEdge {
 type Ace2soConnection {
   edges: [Ace2soEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10132,6 +10770,8 @@ type Transcript__detailed_descriptionEdge {
 type Transcript__detailed_descriptionConnection {
   edges: [Transcript__detailed_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10144,6 +10784,8 @@ type Neurodata__sendEdge {
 type Neurodata__sendConnection {
   edges: [Neurodata__sendEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10156,6 +10798,8 @@ type Clone__gelEdge {
 type Clone__gelConnection {
   edges: [Clone__gelEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10168,6 +10812,8 @@ type Sage_tag__geneEdge {
 type Sage_tag__geneConnection {
   edges: [Sage_tag__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10180,6 +10826,8 @@ type Phenotype_info__incompleteEdge {
 type Phenotype_info__incompleteConnection {
   edges: [Phenotype_info__incompleteEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10192,6 +10840,8 @@ type MotifEdge {
 type MotifConnection {
   edges: [MotifEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10204,6 +10854,8 @@ type Role__lab_visitorEdge {
 type Role__lab_visitorConnection {
   edges: [Role__lab_visitorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10216,6 +10868,8 @@ type Interaction__interactor_overlapping_proteinEdge {
 type Interaction__interactor_overlapping_proteinConnection {
   edges: [Interaction__interactor_overlapping_proteinEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10228,6 +10882,8 @@ type Pseudogene__remarkEdge {
 type Pseudogene__remarkConnection {
   edges: [Pseudogene__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10240,6 +10896,8 @@ type Pos_neg_data__gene_2Edge {
 type Pos_neg_data__gene_2Connection {
   edges: [Pos_neg_data__gene_2Edge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10252,6 +10910,8 @@ type Pos_neg_data__gene_1Edge {
 type Pos_neg_data__gene_1Connection {
   edges: [Pos_neg_data__gene_1Edge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10264,6 +10924,8 @@ type Wbprocess__moleculeEdge {
 type Wbprocess__moleculeConnection {
   edges: [Wbprocess__moleculeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10276,6 +10938,8 @@ type PeptideEdge {
 type PeptideConnection {
   edges: [PeptideEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10288,6 +10952,8 @@ type Wbprocess__interactionEdge {
 type Wbprocess__interactionConnection {
   edges: [Wbprocess__interactionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10300,6 +10966,8 @@ type PaceEdge {
 type PaceConnection {
   edges: [PaceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10312,6 +10980,8 @@ type Neurodata__receiveEdge {
 type Neurodata__receiveConnection {
   edges: [Neurodata__receiveEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10324,6 +10994,8 @@ type Operon__contains_geneEdge {
 type Operon__contains_geneConnection {
   edges: [Operon__contains_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10336,6 +11008,8 @@ type Grid__lines_atEdge {
 type Grid__lines_atConnection {
   edges: [Grid__lines_atEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10348,6 +11022,8 @@ type Expr_profile__referenceEdge {
 type Expr_profile__referenceConnection {
   edges: [Expr_profile__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10360,6 +11036,8 @@ type Molecule__affects_phenotype_of_rearrangementEdge {
 type Molecule__affects_phenotype_of_rearrangementConnection {
   edges: [Molecule__affects_phenotype_of_rearrangementEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10372,6 +11050,8 @@ type PhenotypeEdge {
 type PhenotypeConnection {
   edges: [PhenotypeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10384,6 +11064,8 @@ type Cds__provisional_descriptionEdge {
 type Cds__provisional_descriptionConnection {
   edges: [Cds__provisional_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10396,6 +11078,8 @@ type Protein__remarkEdge {
 type Protein__remarkConnection {
   edges: [Protein__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10408,6 +11092,8 @@ type Transposon__old_nameEdge {
 type Transposon__old_nameConnection {
   edges: [Transposon__old_nameEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10420,6 +11106,8 @@ type MoleculeEdge {
 type MoleculeConnection {
   edges: [MoleculeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10432,6 +11120,8 @@ type Antibody__animalEdge {
 type Antibody__animalConnection {
   edges: [Antibody__animalEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10444,6 +11134,8 @@ type Cds__brief_identificationEdge {
 type Cds__brief_identificationConnection {
   edges: [Cds__brief_identificationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10456,6 +11148,8 @@ type Antibody__antigenEdge {
 type Antibody__antigenConnection {
   edges: [Antibody__antigenEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10468,6 +11162,8 @@ type Homology_group__databaseEdge {
 type Homology_group__databaseConnection {
   edges: [Homology_group__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10480,6 +11176,8 @@ type Molecular_change__splice_siteEdge {
 type Molecular_change__splice_siteConnection {
   edges: [Molecular_change__splice_siteEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10492,6 +11190,8 @@ type Rnai__transcriptEdge {
 type Rnai__transcriptConnection {
   edges: [Rnai__transcriptEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10504,6 +11204,8 @@ type Feature__remarkEdge {
 type Feature__remarkConnection {
   edges: [Feature__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10516,6 +11218,8 @@ type Paper__personEdge {
 type Paper__personConnection {
   edges: [Paper__personEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10528,6 +11232,8 @@ type Map_position__multi_positionEdge {
 type Map_position__multi_positionConnection {
   edges: [Map_position__multi_positionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10540,6 +11246,8 @@ type Sage_tag__remarkEdge {
 type Sage_tag__remarkConnection {
   edges: [Sage_tag__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10552,6 +11260,8 @@ type Multi_counts__rearrangementEdge {
 type Multi_counts__rearrangementConnection {
   edges: [Multi_counts__rearrangementEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10564,6 +11274,8 @@ type Wbprocess__expression_clusterEdge {
 type Wbprocess__expression_clusterConnection {
   edges: [Wbprocess__expression_clusterEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10576,6 +11288,8 @@ type Cds__remarkEdge {
 type Cds__remarkConnection {
   edges: [Cds__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10588,6 +11302,8 @@ type Pcr_product__oligoEdge {
 type Pcr_product__oligoConnection {
   edges: [Pcr_product__oligoEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10600,6 +11316,8 @@ type Strain__elevationEdge {
 type Strain__elevationConnection {
   edges: [Strain__elevationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10612,6 +11330,8 @@ type Sequence__clone_right_endEdge {
 type Sequence__clone_right_endConnection {
   edges: [Sequence__clone_right_endEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10624,6 +11344,8 @@ type Clone__hybridizes_toEdge {
 type Clone__hybridizes_toConnection {
   edges: [Clone__hybridizes_toEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10636,6 +11358,8 @@ type Embl_infoEdge {
 type Embl_infoConnection {
   edges: [Embl_infoEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10648,6 +11372,8 @@ type Transcript__concise_descriptionEdge {
 type Transcript__concise_descriptionConnection {
   edges: [Transcript__concise_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10660,6 +11386,8 @@ type Gene__corresponding_pseudogeneEdge {
 type Gene__corresponding_pseudogeneConnection {
   edges: [Gene__corresponding_pseudogeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10672,6 +11400,8 @@ type ProteinEdge {
 type ProteinConnection {
   edges: [ProteinEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10684,6 +11414,8 @@ type Role__mastersEdge {
 type Role__mastersConnection {
   edges: [Role__mastersEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10696,6 +11428,8 @@ type Operon__descriptionEdge {
 type Operon__descriptionConnection {
   edges: [Operon__descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10708,6 +11442,8 @@ type Microarray_results__geneEdge {
 type Microarray_results__geneConnection {
   edges: [Microarray_results__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10720,6 +11456,8 @@ type Lane__bandEdge {
 type Lane__bandConnection {
   edges: [Lane__bandEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10732,6 +11470,8 @@ type Motif__remarkEdge {
 type Motif__remarkConnection {
   edges: [Motif__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10744,6 +11484,8 @@ type Two_point_data__selectedEdge {
 type Two_point_data__selectedConnection {
   edges: [Two_point_data__selectedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10756,6 +11498,8 @@ type Feature__bound_by_product_ofEdge {
 type Feature__bound_by_product_ofConnection {
   edges: [Feature__bound_by_product_ofEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10768,6 +11512,8 @@ type Two_point_data__dom_letEdge {
 type Two_point_data__dom_letConnection {
   edges: [Two_point_data__dom_letEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10780,6 +11526,8 @@ type Microarray_results__maxEdge {
 type Microarray_results__maxConnection {
   edges: [Microarray_results__maxEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10792,6 +11540,8 @@ type Variation__phenotypeEdge {
 type Variation__phenotypeConnection {
   edges: [Variation__phenotypeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10804,6 +11554,8 @@ type Transposon__corresponding_pseudogeneEdge {
 type Transposon__corresponding_pseudogeneConnection {
   edges: [Transposon__corresponding_pseudogeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10816,6 +11568,8 @@ type Oligo_setEdge {
 type Oligo_setConnection {
   edges: [Oligo_setEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10828,6 +11582,8 @@ type Go_annotation__go_referenceEdge {
 type Go_annotation__go_referenceConnection {
   edges: [Go_annotation__go_referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10840,6 +11596,8 @@ type Two_point_data__fullEdge {
 type Two_point_data__fullConnection {
   edges: [Two_point_data__fullEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10852,6 +11610,8 @@ type Molecule__affects_phenotype_of_transgeneEdge {
 type Molecule__affects_phenotype_of_transgeneConnection {
   edges: [Molecule__affects_phenotype_of_transgeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10864,6 +11624,8 @@ type Db__installEdge {
 type Db__installConnection {
   edges: [Db__installEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10876,6 +11638,8 @@ type Gene__concise_descriptionEdge {
 type Gene__concise_descriptionConnection {
   edges: [Gene__concise_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10888,6 +11652,8 @@ type Variation__referenceEdge {
 type Variation__referenceConnection {
   edges: [Variation__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10900,6 +11666,8 @@ type Phenotype_info__quantityEdge {
 type Phenotype_info__quantityConnection {
   edges: [Phenotype_info__quantityEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10912,6 +11680,8 @@ type Pace__xrefEdge {
 type Pace__xrefConnection {
   edges: [Pace__xrefEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10924,6 +11694,8 @@ type Construct__summaryEdge {
 type Construct__summaryConnection {
   edges: [Construct__summaryEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10936,6 +11708,8 @@ type Gene__databaseEdge {
 type Gene__databaseConnection {
   edges: [Gene__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10948,6 +11722,8 @@ type Phenotype_info__rangeEdge {
 type Phenotype_info__rangeConnection {
   edges: [Phenotype_info__rangeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10960,6 +11736,8 @@ type Clone__positive_geneEdge {
 type Clone__positive_geneConnection {
   edges: [Clone__positive_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10972,6 +11750,8 @@ type Molecule__remarkEdge {
 type Molecule__remarkConnection {
   edges: [Molecule__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10984,6 +11764,8 @@ type Two_point_dataEdge {
 type Two_point_dataConnection {
   edges: [Two_point_dataEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -10996,6 +11778,8 @@ type Phenotype_info__molecule_affectedEdge {
 type Phenotype_info__molecule_affectedConnection {
   edges: [Phenotype_info__molecule_affectedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11008,6 +11792,8 @@ type Role__postdocEdge {
 type Role__postdocConnection {
   edges: [Role__postdocEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11020,6 +11806,8 @@ type Gene__cgc_nameEdge {
 type Gene__cgc_nameConnection {
   edges: [Gene__cgc_nameEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11032,6 +11820,8 @@ type Rnai__referenceEdge {
 type Rnai__referenceConnection {
   edges: [Rnai__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11044,6 +11834,8 @@ type Splice_confirmationEdge {
 type Splice_confirmationConnection {
   edges: [Splice_confirmationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11056,6 +11848,8 @@ type Sequence__source_exonsEdge {
 type Sequence__source_exonsConnection {
   edges: [Sequence__source_exonsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11068,6 +11862,8 @@ type Molecule__extraction_methodEdge {
 type Molecule__extraction_methodConnection {
   edges: [Molecule__extraction_methodEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11080,6 +11876,8 @@ type Sequence__databaseEdge {
 type Sequence__databaseConnection {
   edges: [Sequence__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11092,6 +11890,8 @@ type Expression_cluster__remarkEdge {
 type Expression_cluster__remarkConnection {
   edges: [Expression_cluster__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11104,6 +11904,8 @@ type Two_point_data__dom_oneEdge {
 type Two_point_data__dom_oneConnection {
   edges: [Two_point_data__dom_oneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11116,6 +11918,8 @@ type Condition__remarkEdge {
 type Condition__remarkConnection {
   edges: [Condition__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11128,6 +11932,8 @@ type Anatomy_term__reconstructionEdge {
 type Anatomy_term__reconstructionConnection {
   edges: [Anatomy_term__reconstructionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11140,6 +11946,8 @@ type Sequence__gap_rightEdge {
 type Sequence__gap_rightConnection {
   edges: [Sequence__gap_rightEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11152,6 +11960,8 @@ type Rearrangement__locus_outsideEdge {
 type Rearrangement__locus_outsideConnection {
   edges: [Rearrangement__locus_outsideEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11164,6 +11974,8 @@ type Gene__reference_alleleEdge {
 type Gene__reference_alleleConnection {
   edges: [Gene__reference_alleleEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11176,6 +11988,8 @@ type Transcription_factor__associated_with_geneEdge {
 type Transcription_factor__associated_with_geneConnection {
   edges: [Transcription_factor__associated_with_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11188,6 +12002,8 @@ type Gene_history_action__changed_classEdge {
 type Gene_history_action__changed_classConnection {
   edges: [Gene_history_action__changed_classEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11200,6 +12016,8 @@ type Map_position__leftEdge {
 type Map_position__leftConnection {
   edges: [Map_position__leftEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11212,6 +12030,8 @@ type Reconstruction__remarkEdge {
 type Reconstruction__remarkConnection {
   edges: [Reconstruction__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11224,6 +12044,8 @@ type Microarray_data__range_within_paperEdge {
 type Microarray_data__range_within_paperConnection {
   edges: [Microarray_data__range_within_paperEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11236,6 +12058,8 @@ type Feature__flanking_sequencesEdge {
 type Feature__flanking_sequencesConnection {
   edges: [Feature__flanking_sequencesEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11248,6 +12072,8 @@ type Grid__xy_labellingEdge {
 type Grid__xy_labellingConnection {
   edges: [Grid__xy_labellingEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11260,6 +12086,8 @@ type Cds__referenceEdge {
 type Cds__referenceConnection {
   edges: [Cds__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11272,6 +12100,8 @@ type Cds__corresponding_proteinEdge {
 type Cds__corresponding_proteinConnection {
   edges: [Cds__corresponding_proteinEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11284,6 +12114,8 @@ type Go_annotation__interacting_speciesEdge {
 type Go_annotation__interacting_speciesConnection {
   edges: [Go_annotation__interacting_speciesEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11296,6 +12128,8 @@ type OligoEdge {
 type OligoConnection {
   edges: [OligoEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11308,6 +12142,8 @@ type Position_matrix__valueEdge {
 type Position_matrix__valueConnection {
   edges: [Position_matrix__valueEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11320,6 +12156,8 @@ type Go_annotation__gene_relationEdge {
 type Go_annotation__gene_relationConnection {
   edges: [Go_annotation__gene_relationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11332,6 +12170,8 @@ type Do_termEdge {
 type Do_termConnection {
   edges: [Do_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11344,6 +12184,8 @@ type Two_point_data__sex_oneEdge {
 type Two_point_data__sex_oneConnection {
   edges: [Two_point_data__sex_oneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11356,6 +12198,8 @@ type Expression_cluster__geneEdge {
 type Expression_cluster__geneConnection {
   edges: [Expression_cluster__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11368,6 +12212,8 @@ type Person__supervised_byEdge {
 type Person__supervised_byConnection {
   edges: [Person__supervised_byEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11380,6 +12226,8 @@ type Interaction__remarkEdge {
 type Interaction__remarkConnection {
   edges: [Interaction__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11392,6 +12240,8 @@ type Sequence_collectionEdge {
 type Sequence_collectionConnection {
   edges: [Sequence_collectionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11404,6 +12254,8 @@ type Anatomy_function__not_involvedEdge {
 type Anatomy_function__not_involvedConnection {
   edges: [Anatomy_function__not_involvedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11416,6 +12268,8 @@ type Cds__cdsEdge {
 type Cds__cdsConnection {
   edges: [Cds__cdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11428,6 +12282,8 @@ type Pseudogene__source_exonsEdge {
 type Pseudogene__source_exonsConnection {
   edges: [Pseudogene__source_exonsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11440,6 +12296,8 @@ type Sage_tag__resultsEdge {
 type Sage_tag__resultsConnection {
   edges: [Sage_tag__resultsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11452,6 +12310,8 @@ type Transposon_familyEdge {
 type Transposon_familyConnection {
   edges: [Transposon_familyEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11464,6 +12324,8 @@ type Cds__last_reviewedEdge {
 type Cds__last_reviewedConnection {
   edges: [Cds__last_reviewedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11476,6 +12338,8 @@ type Two_point_data__one_letEdge {
 type Two_point_data__one_letConnection {
   edges: [Two_point_data__one_letEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11488,6 +12352,8 @@ type Cds__rnaseqEdge {
 type Cds__rnaseqConnection {
   edges: [Cds__rnaseqEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11500,6 +12366,8 @@ type Person__old_addressEdge {
 type Person__old_addressConnection {
   edges: [Person__old_addressEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11512,6 +12380,8 @@ type Rnai__phenotypeEdge {
 type Rnai__phenotypeConnection {
   edges: [Rnai__phenotypeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11524,6 +12394,8 @@ type Molecule__affects_phenotype_of_rnaiEdge {
 type Molecule__affects_phenotype_of_rnaiConnection {
   edges: [Molecule__affects_phenotype_of_rnaiEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11536,6 +12408,8 @@ type Phenotype__go_termEdge {
 type Phenotype__go_termConnection {
   edges: [Phenotype__go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11548,6 +12422,8 @@ type Phenotype_info__life_stageEdge {
 type Phenotype_info__life_stageConnection {
   edges: [Phenotype_info__life_stageEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11560,6 +12436,8 @@ type Anatomy_term__definitionEdge {
 type Anatomy_term__definitionConnection {
   edges: [Anatomy_term__definitionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11572,6 +12450,8 @@ type Sk_map__remarkEdge {
 type Sk_map__remarkConnection {
   edges: [Sk_map__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11584,6 +12464,8 @@ type Expr_pattern__not_in_anatomy_termEdge {
 type Expr_pattern__not_in_anatomy_termConnection {
   edges: [Expr_pattern__not_in_anatomy_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11596,6 +12478,8 @@ type Gene__disease_potential_modelEdge {
 type Gene__disease_potential_modelConnection {
   edges: [Gene__disease_potential_modelEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11608,6 +12492,8 @@ type Pcr_product__remarkEdge {
 type Pcr_product__remarkConnection {
   edges: [Pcr_product__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11620,6 +12506,8 @@ type Rearrangement__remarkEdge {
 type Rearrangement__remarkConnection {
   edges: [Rearrangement__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11632,6 +12520,8 @@ type Interaction__variation_interactorEdge {
 type Interaction__variation_interactorConnection {
   edges: [Interaction__variation_interactorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11644,6 +12534,8 @@ type Microarray_experimentEdge {
 type Microarray_experimentConnection {
   edges: [Microarray_experimentEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11656,6 +12548,8 @@ type Sk_mapEdge {
 type Sk_mapConnection {
   edges: [Sk_mapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11668,6 +12562,8 @@ type Gene__ortholog_otherEdge {
 type Gene__ortholog_otherConnection {
   edges: [Gene__ortholog_otherEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11680,6 +12576,8 @@ type Gene_cluster__referenceEdge {
 type Gene_cluster__referenceConnection {
   edges: [Gene_cluster__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11692,6 +12590,8 @@ type Sequence__assembly_tagsEdge {
 type Sequence__assembly_tagsConnection {
   edges: [Sequence__assembly_tagsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11704,6 +12604,8 @@ type FeatureEdge {
 type FeatureConnection {
   edges: [FeatureEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11716,6 +12618,8 @@ type Phenotype__descriptionEdge {
 type Phenotype__descriptionConnection {
   edges: [Phenotype__descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11728,6 +12632,8 @@ type Splice_confirm__rnaseqEdge {
 type Splice_confirm__rnaseqConnection {
   edges: [Splice_confirm__rnaseqEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11740,6 +12646,8 @@ type Interaction__other_interactorEdge {
 type Interaction__other_interactorConnection {
   edges: [Interaction__other_interactorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11752,6 +12660,8 @@ type Transgene__phenotype_not_observedEdge {
 type Transgene__phenotype_not_observedConnection {
   edges: [Transgene__phenotype_not_observedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11764,6 +12674,8 @@ type Strain__referenceEdge {
 type Strain__referenceConnection {
   edges: [Strain__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11776,6 +12688,8 @@ type Cds__protein_idEdge {
 type Cds__protein_idConnection {
   edges: [Cds__protein_idEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11788,6 +12702,8 @@ type Feature__associated_with_transcription_factorEdge {
 type Feature__associated_with_transcription_factorConnection {
   edges: [Feature__associated_with_transcription_factorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11800,6 +12716,8 @@ type Wbprocess__life_stageEdge {
 type Wbprocess__life_stageConnection {
   edges: [Wbprocess__life_stageEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11812,6 +12730,8 @@ type Transcript__go_termEdge {
 type Transcript__go_termConnection {
   edges: [Transcript__go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11824,6 +12744,8 @@ type Protein__historyEdge {
 type Protein__historyConnection {
   edges: [Protein__historyEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11836,6 +12758,8 @@ type Variation__phenotype_remarkEdge {
 type Variation__phenotype_remarkConnection {
   edges: [Variation__phenotype_remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11848,6 +12772,8 @@ type Life_stage__referenceEdge {
 type Life_stage__referenceConnection {
   edges: [Life_stage__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11860,6 +12786,8 @@ type Clone__referenceEdge {
 type Clone__referenceConnection {
   edges: [Clone__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11872,6 +12800,8 @@ type Pseudogene__matching_cdnaEdge {
 type Pseudogene__matching_cdnaConnection {
   edges: [Pseudogene__matching_cdnaEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11884,6 +12814,8 @@ type Phenotype__short_nameEdge {
 type Phenotype__short_nameConnection {
   edges: [Phenotype__short_nameEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11896,6 +12828,8 @@ type MethodEdge {
 type MethodConnection {
   edges: [MethodEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11908,6 +12842,8 @@ type Expression_cluster__referenceEdge {
 type Expression_cluster__referenceConnection {
   edges: [Expression_cluster__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11920,6 +12856,8 @@ type Phenotype_info__imageEdge {
 type Phenotype_info__imageConnection {
   edges: [Phenotype_info__imageEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11932,6 +12870,8 @@ type Variation__statusEdge {
 type Variation__statusConnection {
   edges: [Variation__statusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11944,6 +12884,8 @@ type Variation__interpolated_map_positionEdge {
 type Variation__interpolated_map_positionConnection {
   edges: [Variation__interpolated_map_positionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11956,6 +12898,8 @@ type Contig__pmapEdge {
 type Contig__pmapConnection {
   edges: [Contig__pmapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11968,6 +12912,8 @@ type Variation__substitutionEdge {
 type Variation__substitutionConnection {
   edges: [Variation__substitutionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11980,6 +12926,8 @@ type MicroarrayEdge {
 type MicroarrayConnection {
   edges: [MicroarrayEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -11992,6 +12940,8 @@ type Role__collaboratedEdge {
 type Role__collaboratedConnection {
   edges: [Role__collaboratedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12004,6 +12954,8 @@ type Construct__construct_for_diseaseEdge {
 type Construct__construct_for_diseaseConnection {
   edges: [Construct__construct_for_diseaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12016,6 +12968,8 @@ type Reference__remarkEdge {
 type Reference__remarkConnection {
   edges: [Reference__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12028,6 +12982,8 @@ type LaboratoryEdge {
 type LaboratoryConnection {
   edges: [LaboratoryEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12040,6 +12996,8 @@ type Paper__typeEdge {
 type Paper__typeConnection {
   edges: [Paper__typeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12052,6 +13010,8 @@ type Interaction__feature_interactorEdge {
 type Interaction__feature_interactorConnection {
   edges: [Interaction__feature_interactorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12064,6 +13024,8 @@ type Lab_location__remarkEdge {
 type Lab_location__remarkConnection {
   edges: [Lab_location__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12076,6 +13038,8 @@ type So_termEdge {
 type So_termConnection {
   edges: [So_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12088,6 +13052,8 @@ type Pseudogene__provisional_descriptionEdge {
 type Pseudogene__provisional_descriptionConnection {
   edges: [Pseudogene__provisional_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12100,6 +13066,8 @@ type Sage_tag__pseudogeneEdge {
 type Sage_tag__pseudogeneConnection {
   edges: [Sage_tag__pseudogeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12112,6 +13080,8 @@ type Expr_pattern__referenceEdge {
 type Expr_pattern__referenceConnection {
   edges: [Expr_pattern__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12124,6 +13094,8 @@ type Wbprocess__summaryEdge {
 type Wbprocess__summaryConnection {
   edges: [Wbprocess__summaryEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12136,6 +13108,8 @@ type Db__alterEdge {
 type Db__alterConnection {
   edges: [Db__alterEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12148,6 +13122,8 @@ type Molecule__essential_forEdge {
 type Molecule__essential_forConnection {
   edges: [Molecule__essential_forEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12160,6 +13136,8 @@ type Oligo_set__overlaps_transcriptEdge {
 type Oligo_set__overlaps_transcriptConnection {
   edges: [Oligo_set__overlaps_transcriptEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12172,6 +13150,8 @@ type Multi_pt_dataEdge {
 type Multi_pt_dataConnection {
   edges: [Multi_pt_dataEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12184,6 +13164,8 @@ type Feature__defined_by_sequenceEdge {
 type Feature__defined_by_sequenceConnection {
   edges: [Feature__defined_by_sequenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12196,6 +13178,8 @@ type Timepoint__xyzEdge {
 type Timepoint__xyzConnection {
   edges: [Timepoint__xyzEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12208,6 +13192,8 @@ type Construct__geneEdge {
 type Construct__geneConnection {
   edges: [Construct__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12220,6 +13206,8 @@ type Go_termEdge {
 type Go_termConnection {
   edges: [Go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12232,6 +13220,8 @@ type Method__remarkEdge {
 type Method__remarkConnection {
   edges: [Method__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12244,6 +13234,8 @@ type Wbprocess__phenotypeEdge {
 type Wbprocess__phenotypeConnection {
   edges: [Wbprocess__phenotypeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12256,6 +13248,8 @@ type Pseudogene__databaseEdge {
 type Pseudogene__databaseConnection {
   edges: [Pseudogene__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12268,6 +13262,8 @@ type Anatomy_function__involvedEdge {
 type Anatomy_function__involvedConnection {
   edges: [Anatomy_function__involvedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12280,6 +13276,8 @@ type Strain__phenotypeEdge {
 type Strain__phenotypeConnection {
   edges: [Strain__phenotypeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12292,6 +13290,8 @@ type Neurodata__gap_junctionEdge {
 type Neurodata__gap_junctionConnection {
   edges: [Neurodata__gap_junctionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12304,6 +13304,8 @@ type Library__databaseEdge {
 type Library__databaseConnection {
   edges: [Library__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12316,6 +13318,8 @@ type Expr_profileEdge {
 type Expr_profileConnection {
   edges: [Expr_profileEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12328,6 +13332,8 @@ type Strain__databaseEdge {
 type Strain__databaseConnection {
   edges: [Strain__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12340,6 +13346,8 @@ type Phenotype_info__lowEdge {
 type Phenotype_info__lowConnection {
   edges: [Phenotype_info__lowEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12352,6 +13360,8 @@ type Homology_group__remarkEdge {
 type Homology_group__remarkConnection {
   edges: [Homology_group__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12364,6 +13374,8 @@ type Molecule__affects_phenotype_of_variationEdge {
 type Molecule__affects_phenotype_of_variationConnection {
   edges: [Molecule__affects_phenotype_of_variationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12376,6 +13388,8 @@ type Expr_pattern__associated_featureEdge {
 type Expr_pattern__associated_featureConnection {
   edges: [Expr_pattern__associated_featureEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12388,6 +13402,8 @@ type Rearrangement__locationEdge {
 type Rearrangement__locationConnection {
   edges: [Rearrangement__locationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12400,6 +13416,8 @@ type GeneEdge {
 type GeneConnection {
   edges: [GeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12412,6 +13430,8 @@ type AntibodyEdge {
 type AntibodyConnection {
   edges: [AntibodyEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12424,6 +13444,8 @@ type Ao_codeEdge {
 type Ao_codeConnection {
   edges: [Ao_codeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12436,6 +13458,8 @@ type Gene__orthologEdge {
 type Gene__orthologConnection {
   edges: [Gene__orthologEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12448,6 +13472,8 @@ type Construct__three_prime_utrEdge {
 type Construct__three_prime_utrConnection {
   edges: [Construct__three_prime_utrEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12460,6 +13486,8 @@ type Gene__other_descriptionEdge {
 type Gene__other_descriptionConnection {
   edges: [Gene__other_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12472,6 +13500,8 @@ type Phenotype_info__genotypeEdge {
 type Phenotype_info__genotypeConnection {
   edges: [Phenotype_info__genotypeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12484,6 +13514,8 @@ type Picture__wbprocessEdge {
 type Picture__wbprocessConnection {
   edges: [Picture__wbprocessEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12496,6 +13528,8 @@ type Multi_pt_data__locusEdge {
 type Multi_pt_data__locusConnection {
   edges: [Multi_pt_data__locusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12508,6 +13542,8 @@ type Operon__deprecatedEdge {
 type Operon__deprecatedConnection {
   edges: [Operon__deprecatedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12520,6 +13556,8 @@ type OperonEdge {
 type OperonConnection {
   edges: [OperonEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12532,6 +13570,8 @@ type Two_point_data__one_recombinantEdge {
 type Two_point_data__one_recombinantConnection {
   edges: [Two_point_data__one_recombinantEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12544,6 +13584,8 @@ type Position_matrixEdge {
 type Position_matrixConnection {
   edges: [Position_matrixEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12556,6 +13598,8 @@ type Clone__in_situEdge {
 type Clone__in_situConnection {
   edges: [Clone__in_situEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12568,6 +13612,8 @@ type Motif__go_termEdge {
 type Motif__go_termConnection {
   edges: [Motif__go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12580,6 +13626,8 @@ type Gene__sequence_featuresEdge {
 type Gene__sequence_featuresConnection {
   edges: [Gene__sequence_featuresEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12592,6 +13640,8 @@ type Paper__speciesEdge {
 type Paper__speciesConnection {
   edges: [Paper__speciesEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12604,6 +13654,8 @@ type Go_annotation__go_term_relationEdge {
 type Go_annotation__go_term_relationConnection {
   edges: [Go_annotation__go_term_relationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12616,6 +13668,8 @@ type Interaction__interaction_summaryEdge {
 type Interaction__interaction_summaryConnection {
   edges: [Interaction__interaction_summaryEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12628,6 +13682,8 @@ type Paper__authorEdge {
 type Paper__authorConnection {
   edges: [Paper__authorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12640,6 +13696,8 @@ type Expression_cluster__anatomy_termEdge {
 type Expression_cluster__anatomy_termConnection {
   edges: [Expression_cluster__anatomy_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12652,6 +13710,8 @@ type Transcript__corresponding_cdsEdge {
 type Transcript__corresponding_cdsConnection {
   edges: [Transcript__corresponding_cdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12664,6 +13724,8 @@ type Gene__automated_descriptionEdge {
 type Gene__automated_descriptionConnection {
   edges: [Gene__automated_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12676,6 +13738,8 @@ type Phenotype_info__pathogenEdge {
 type Phenotype_info__pathogenConnection {
   edges: [Phenotype_info__pathogenEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12688,6 +13752,8 @@ type Pato_termEdge {
 type Pato_termConnection {
   edges: [Pato_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12700,6 +13766,8 @@ type Sage_tag__predicted_cdsEdge {
 type Sage_tag__predicted_cdsConnection {
   edges: [Sage_tag__predicted_cdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12712,6 +13780,8 @@ type Transgene__remarkEdge {
 type Transgene__remarkConnection {
   edges: [Transgene__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12724,6 +13794,8 @@ type Feature__scoreEdge {
 type Feature__scoreConnection {
   edges: [Feature__scoreEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12736,6 +13808,8 @@ type Phenotype_info__treatmentEdge {
 type Phenotype_info__treatmentConnection {
   edges: [Phenotype_info__treatmentEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12748,6 +13822,8 @@ type Neurodata__receive_jointEdge {
 type Neurodata__receive_jointConnection {
   edges: [Neurodata__receive_jointEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12760,6 +13836,8 @@ type TranscriptEdge {
 type TranscriptConnection {
   edges: [TranscriptEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12772,6 +13850,8 @@ type Microarray_results__cdsEdge {
 type Microarray_results__cdsConnection {
   edges: [Microarray_results__cdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12784,6 +13864,8 @@ type DatabaseEdge {
 type DatabaseConnection {
   edges: [DatabaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12796,6 +13878,8 @@ type Rearrangement__locus_insideEdge {
 type Rearrangement__locus_insideConnection {
   edges: [Rearrangement__locus_insideEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12808,6 +13892,8 @@ type Variation__pseudogeneEdge {
 type Variation__pseudogeneConnection {
   edges: [Variation__pseudogeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12820,6 +13906,8 @@ type StrainEdge {
 type StrainConnection {
   edges: [StrainEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12832,6 +13920,8 @@ type Sage_experiment__remarkEdge {
 type Sage_experiment__remarkConnection {
   edges: [Sage_experiment__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12844,6 +13934,8 @@ type Transcription_factorEdge {
 type Transcription_factorConnection {
   edges: [Transcription_factorEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12856,6 +13948,8 @@ type Multi_counts__locusEdge {
 type Multi_counts__locusConnection {
   edges: [Multi_counts__locusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12868,6 +13962,8 @@ type Map_position__with_cloneEdge {
 type Map_position__with_cloneConnection {
   edges: [Map_position__with_cloneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12880,6 +13976,8 @@ type Sequence__protein_idEdge {
 type Sequence__protein_idConnection {
   edges: [Sequence__protein_idEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12892,6 +13990,8 @@ type Interaction__detection_methodEdge {
 type Interaction__detection_methodConnection {
   edges: [Interaction__detection_methodEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12904,6 +14004,8 @@ type Variation__cgh_deleted_probesEdge {
 type Variation__cgh_deleted_probesConnection {
   edges: [Variation__cgh_deleted_probesEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12916,6 +14018,8 @@ type Transposon__remarkEdge {
 type Transposon__remarkConnection {
   edges: [Transposon__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12928,6 +14032,8 @@ type Clone__databaseEdge {
 type Clone__databaseConnection {
   edges: [Clone__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12940,6 +14046,8 @@ type Method__score_boundsEdge {
 type Method__score_boundsConnection {
   edges: [Method__score_boundsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12952,6 +14060,8 @@ type Molecular_change__frameshiftEdge {
 type Molecular_change__frameshiftConnection {
   edges: [Molecular_change__frameshiftEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12964,6 +14074,8 @@ type Microarray_results__pseudogeneEdge {
 type Microarray_results__pseudogeneConnection {
   edges: [Microarray_results__pseudogeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12976,6 +14088,8 @@ type Genetic_codeEdge {
 type Genetic_codeConnection {
   edges: [Genetic_codeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -12988,6 +14102,8 @@ type GridEdge {
 type GridConnection {
   edges: [GridEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13000,6 +14116,8 @@ type Rnai__dna_textEdge {
 type Rnai__dna_textConnection {
   edges: [Rnai__dna_textEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13012,6 +14130,8 @@ type Molecular_change__readthroughEdge {
 type Molecular_change__readthroughConnection {
   edges: [Molecular_change__readthroughEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13024,6 +14144,8 @@ type Two_point_data__sex_fullEdge {
 type Two_point_data__sex_fullConnection {
   edges: [Two_point_data__sex_fullEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13036,6 +14158,8 @@ type Expr_pattern__go_termEdge {
 type Expr_pattern__go_termConnection {
   edges: [Expr_pattern__go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13048,6 +14172,8 @@ type Movie__db_infoEdge {
 type Movie__db_infoConnection {
   edges: [Movie__db_infoEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13060,6 +14186,8 @@ type Sequence__db_annotationEdge {
 type Sequence__db_annotationConnection {
   edges: [Sequence__db_annotationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13072,6 +14200,8 @@ type Phenotype_info__remarkEdge {
 type Phenotype_info__remarkConnection {
   edges: [Phenotype_info__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13084,6 +14214,8 @@ type Variation__strainEdge {
 type Variation__strainConnection {
   edges: [Variation__strainEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13096,6 +14228,8 @@ type TransgeneEdge {
 type TransgeneConnection {
   edges: [TransgeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13108,6 +14242,8 @@ type Gene__statusEdge {
 type Gene__statusConnection {
   edges: [Gene__statusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13120,6 +14256,8 @@ type Gene__other_nameEdge {
 type Gene__other_nameConnection {
   edges: [Gene__other_nameEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13132,6 +14270,8 @@ type Rearrangement__gene_outsideEdge {
 type Rearrangement__gene_outsideConnection {
   edges: [Rearrangement__gene_outsideEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13144,6 +14284,8 @@ type Go_codeEdge {
 type Go_codeConnection {
   edges: [Go_codeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13156,6 +14298,8 @@ type Position_matrix__descriptionEdge {
 type Position_matrix__descriptionConnection {
   edges: [Position_matrix__descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13168,6 +14312,8 @@ type Molecule__endogenous_inEdge {
 type Molecule__endogenous_inConnection {
   edges: [Molecule__endogenous_inEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13180,6 +14326,8 @@ type Molecule__biofunction_roleEdge {
 type Molecule__biofunction_roleConnection {
   edges: [Molecule__biofunction_roleEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13192,6 +14340,8 @@ type Pseudogene__rnaseqEdge {
 type Pseudogene__rnaseqConnection {
   edges: [Pseudogene__rnaseqEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13204,6 +14354,8 @@ type Interaction__library_screenedEdge {
 type Interaction__library_screenedConnection {
   edges: [Interaction__library_screenedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13216,6 +14368,8 @@ type Structure_data__remarkEdge {
 type Structure_data__remarkConnection {
   edges: [Structure_data__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13228,6 +14382,8 @@ type Go_annotation__databaseEdge {
 type Go_annotation__databaseConnection {
   edges: [Go_annotation__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13240,6 +14396,8 @@ type Gene__biological_processEdge {
 type Gene__biological_processConnection {
   edges: [Gene__biological_processEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13252,6 +14410,8 @@ type Sequence__referenceEdge {
 type Sequence__referenceConnection {
   edges: [Sequence__referenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13264,6 +14424,8 @@ type Life_stage__remarkEdge {
 type Life_stage__remarkConnection {
   edges: [Life_stage__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13276,6 +14438,8 @@ type Gene__remarkEdge {
 type Gene__remarkConnection {
   edges: [Gene__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13288,6 +14452,8 @@ type Do_term__synonymEdge {
 type Do_term__synonymConnection {
   edges: [Do_term__synonymEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13300,6 +14466,8 @@ type Cds__go_termEdge {
 type Cds__go_termConnection {
   edges: [Cds__go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13312,6 +14480,8 @@ type Transcription_factor__remarkEdge {
 type Transcription_factor__remarkConnection {
   edges: [Transcription_factor__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13324,6 +14494,8 @@ type Sequence__dateEdge {
 type Sequence__dateConnection {
   edges: [Sequence__dateEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13336,6 +14508,8 @@ type TreeEdge {
 type TreeConnection {
   edges: [TreeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13348,6 +14522,8 @@ type Interaction__databaseEdge {
 type Interaction__databaseConnection {
   edges: [Interaction__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13360,6 +14536,8 @@ type Variation__insertionEdge {
 type Variation__insertionConnection {
   edges: [Variation__insertionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13372,6 +14550,8 @@ type SequenceEdge {
 type SequenceConnection {
   edges: [SequenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13384,6 +14564,8 @@ type Gene__interpolated_map_positionEdge {
 type Gene__interpolated_map_positionConnection {
   edges: [Gene__interpolated_map_positionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13396,6 +14578,8 @@ type Method__embl_qualifierEdge {
 type Method__embl_qualifierConnection {
   edges: [Method__embl_qualifierEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13408,6 +14592,8 @@ type Multi_counts__geneEdge {
 type Multi_counts__geneConnection {
   edges: [Multi_counts__geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13420,6 +14606,8 @@ type PersonEdge {
 type PersonConnection {
   edges: [PersonEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13432,6 +14620,8 @@ type Mass_spec_experimentEdge {
 type Mass_spec_experimentConnection {
   edges: [Mass_spec_experimentEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13444,6 +14634,8 @@ type Homol_dataEdge {
 type Homol_dataConnection {
   edges: [Homol_dataEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13456,6 +14648,8 @@ type Variation__flanking_sequencesEdge {
 type Variation__flanking_sequencesConnection {
   edges: [Variation__flanking_sequencesEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13468,6 +14662,8 @@ type Sequence__oligoEdge {
 type Sequence__oligoConnection {
   edges: [Sequence__oligoEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13480,6 +14676,8 @@ type Expression_clusterEdge {
 type Expression_clusterConnection {
   edges: [Expression_clusterEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13492,6 +14690,8 @@ type Phenotype_info__moleculeEdge {
 type Phenotype_info__moleculeConnection {
   edges: [Phenotype_info__moleculeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13504,6 +14704,8 @@ type Position_matrix__remarkEdge {
 type Position_matrix__remarkConnection {
   edges: [Position_matrix__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13516,6 +14718,8 @@ type Transcription_factor__typeEdge {
 type Transcription_factor__typeConnection {
   edges: [Transcription_factor__typeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13528,6 +14732,8 @@ type Microarray_results__resultsEdge {
 type Microarray_results__resultsConnection {
   edges: [Microarray_results__resultsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13540,6 +14746,8 @@ type Transgene__transgene_for_diseaseEdge {
 type Transgene__transgene_for_diseaseConnection {
   edges: [Transgene__transgene_for_diseaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13552,6 +14760,8 @@ type Clone__locationEdge {
 type Clone__locationConnection {
   edges: [Clone__locationEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13564,6 +14774,8 @@ type Expression_cluster__sage_tagEdge {
 type Expression_cluster__sage_tagConnection {
   edges: [Expression_cluster__sage_tagEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13576,6 +14788,8 @@ type Transgene__summaryEdge {
 type Transgene__summaryConnection {
   edges: [Transgene__summaryEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13588,6 +14802,8 @@ type Mass_spec_peptideEdge {
 type Mass_spec_peptideConnection {
   edges: [Mass_spec_peptideEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13600,6 +14816,8 @@ type ReferenceEdge {
 type ReferenceConnection {
   edges: [ReferenceEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13612,6 +14830,8 @@ type RnaiEdge {
 type RnaiConnection {
   edges: [RnaiEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13624,6 +14844,8 @@ type Two_point_data__recs_allEdge {
 type Two_point_data__recs_allConnection {
   edges: [Two_point_data__recs_allEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13636,6 +14858,8 @@ type FressianEdge {
 type FressianConnection {
   edges: [FressianEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13648,6 +14872,8 @@ type Cds__matching_cdnaEdge {
 type Cds__matching_cdnaConnection {
   edges: [Cds__matching_cdnaEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13660,6 +14886,8 @@ type Variation__mapEdge {
 type Variation__mapConnection {
   edges: [Variation__mapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13672,6 +14900,8 @@ type Transposon__corresponding_cdsEdge {
 type Transposon__corresponding_cdsConnection {
   edges: [Transposon__corresponding_cdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13684,6 +14914,8 @@ type Two_point_data__locus_1Edge {
 type Two_point_data__locus_1Connection {
   edges: [Two_point_data__locus_1Edge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13696,6 +14928,8 @@ type Picture__article_urlEdge {
 type Picture__article_urlConnection {
   edges: [Picture__article_urlEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13708,6 +14942,8 @@ type Anatomy_term__remarkEdge {
 type Anatomy_term__remarkConnection {
   edges: [Anatomy_term__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13720,6 +14956,8 @@ type Two_point_data__locus_2Edge {
 type Two_point_data__locus_2Connection {
   edges: [Two_point_data__locus_2Edge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13732,6 +14970,8 @@ type Phenotype__synonymEdge {
 type Phenotype__synonymConnection {
   edges: [Phenotype__synonymEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13744,6 +14984,8 @@ type Clone__mapEdge {
 type Clone__mapConnection {
   edges: [Clone__mapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13756,6 +14998,8 @@ type Variation__phenotype_not_observedEdge {
 type Variation__phenotype_not_observedConnection {
   edges: [Variation__phenotype_not_observedEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13768,6 +15012,8 @@ type Rnai__predicted_geneEdge {
 type Rnai__predicted_geneConnection {
   edges: [Rnai__predicted_geneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13780,6 +15026,8 @@ type Locus__other_nameEdge {
 type Locus__other_nameConnection {
   edges: [Locus__other_nameEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13792,6 +15040,8 @@ type Splice_confirmEdge {
 type Splice_confirmConnection {
   edges: [Splice_confirmEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13804,6 +15054,8 @@ type Pos_neg_data__locus_1Edge {
 type Pos_neg_data__locus_1Connection {
   edges: [Pos_neg_data__locus_1Edge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13816,6 +15068,8 @@ type Variation__male_mating_efficiencyEdge {
 type Variation__male_mating_efficiencyConnection {
   edges: [Variation__male_mating_efficiencyEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13828,6 +15082,8 @@ type Pos_neg_data__locus_2Edge {
 type Pos_neg_data__locus_2Connection {
   edges: [Pos_neg_data__locus_2Edge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13840,6 +15096,8 @@ type Phenotype_info__quantity_descriptionEdge {
 type Phenotype_info__quantity_descriptionConnection {
   edges: [Phenotype_info__quantity_descriptionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13852,6 +15110,8 @@ type LocusEdge {
 type LocusConnection {
   edges: [LocusEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13864,6 +15124,8 @@ type Gene__functional_physical_interactionEdge {
 type Gene__functional_physical_interactionConnection {
   edges: [Gene__functional_physical_interactionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13876,6 +15138,8 @@ type InteractionEdge {
 type InteractionConnection {
   edges: [InteractionEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13888,6 +15152,8 @@ type Phenotype_info__heat_sensitiveEdge {
 type Phenotype_info__heat_sensitiveConnection {
   edges: [Phenotype_info__heat_sensitiveEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13900,6 +15166,8 @@ type Variation__remarkEdge {
 type Variation__remarkConnection {
   edges: [Variation__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13912,6 +15180,8 @@ type Feature__associated_with_pseudogeneEdge {
 type Feature__associated_with_pseudogeneConnection {
   edges: [Feature__associated_with_pseudogeneEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13924,6 +15194,8 @@ type Expr_pattern__anatomy_termEdge {
 type Expr_pattern__anatomy_termConnection {
   edges: [Expr_pattern__anatomy_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13936,6 +15208,8 @@ type Transgene__laboratoryEdge {
 type Transgene__laboratoryConnection {
   edges: [Transgene__laboratoryEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13948,6 +15222,8 @@ type Transgene__phenotypeEdge {
 type Transgene__phenotypeConnection {
   edges: [Transgene__phenotypeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13960,6 +15236,8 @@ type Oligo_set__overlaps_cdsEdge {
 type Oligo_set__overlaps_cdsConnection {
   edges: [Oligo_set__overlaps_cdsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13972,6 +15250,8 @@ type Clone__hybridizes_weakEdge {
 type Clone__hybridizes_weakConnection {
   edges: [Clone__hybridizes_weakEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13984,6 +15264,8 @@ type Gene_class__former_designating_laboratoryEdge {
 type Gene_class__former_designating_laboratoryConnection {
   edges: [Gene_class__former_designating_laboratoryEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -13996,6 +15278,8 @@ type Clone__bandsEdge {
 type Clone__bandsConnection {
   edges: [Clone__bandsEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -14008,6 +15292,8 @@ type Gene__version_changeEdge {
 type Gene__version_changeConnection {
   edges: [Gene__version_changeEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -14020,6 +15306,8 @@ type Microarray__remarkEdge {
 type Microarray__remarkConnection {
   edges: [Microarray__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -14032,6 +15320,8 @@ type Mass_spec_experiment__remarkEdge {
 type Mass_spec_experiment__remarkConnection {
   edges: [Mass_spec_experiment__remarkEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -14044,6 +15334,8 @@ type Sequence__go_termEdge {
 type Sequence__go_termConnection {
   edges: [Sequence__go_termEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -14056,6 +15348,8 @@ type PaperEdge {
 type PaperConnection {
   edges: [PaperEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -14068,6 +15362,8 @@ type Paper__databaseEdge {
 type Paper__databaseConnection {
   edges: [Paper__databaseEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -14080,6 +15376,8 @@ type Locus__mapEdge {
 type Locus__mapConnection {
   edges: [Locus__mapEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -14092,6 +15390,8 @@ type Go_term__synonymEdge {
 type Go_term__synonymConnection {
   edges: [Go_term__synonymEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 
@@ -14186,7 +15486,7 @@ type Query {
   movie(id: String!): Movie
   oligo(id: String!): Oligo
   keyword(id: String!): Keyword
-  getGenesByNames(names: String!, cursor: String): GeneConnection
+  getGenesByNames(names: [String]!, after: String): GeneConnection
 }
 
 

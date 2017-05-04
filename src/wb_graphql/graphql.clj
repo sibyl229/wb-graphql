@@ -216,6 +216,8 @@ type %sEdge {
 type %sConnection {
   edges: [%sEdge]
   hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String
   endCursor: String
 }
 " (take 4 (repeat gq-type-name)))))
@@ -259,7 +261,7 @@ type %sConnection {
        (format "
 type Query {
   %s
-  getGenesByNames(names: String!, cursor: String): GeneConnection
+  getGenesByNames(names: [String]!, after: String): GeneConnection
 }
 ")))
 
@@ -268,21 +270,33 @@ type Query {
   (let [db (d/db datomic-conn)]
     (match/match
      [type-name field-name]
-     ["Query" "getGenesByNames"] (defn x [context parent args]
-                                   (let [names (str/split (get args "names") #"\s+")
-                                         cursor (read-string (get args "cursor" "0"))
-                                         objects (take 10 (sort (d/q '[:find [?g ...]
-                                                                       :in $ [?nm ...] ?c
-                                                                       :where
-                                                                       [?g :gene/public-name ?nm]
-                                                                       [(> ?g ?c)]]
-                                                                     db names cursor)))]
-                                     (->> objects
-                                          (map #(assoc {}
-                                                       :node (d/entity db %)
-                                                       :cursor %))
-                                          (assoc {:hasNextPage (boolean (seq objects))
-                                                  :endCursor (last objects)} :edges))))
+     ["Query" "getGenesByNames"] (fn [context parent args]
+                                   (let [names (get args "names")
+                                         names-with-offset (map-indexed vector names)
+                                         prev-cursor (read-string (get args "after" "-1"))
+                                         page-size 10
+                                         page-names-with-offset (->> names-with-offset
+                                                                     (drop (+ 1 prev-cursor))
+                                                                     (take page-size))
+                                         relations (->> page-names-with-offset
+                                                        (d/q '[:find ?offset ?g
+                                                               :in $ [[?offset ?nm]]
+                                                               :where
+                                                               [?g :gene/public-name ?nm]]
+                                                             db)
+                                                        (sort-by (fn [[offset _]]
+                                                                   offset)))
+                                         start-cursor (first (first relations))
+                                         end-cursor (first (last relations))]
+                                     (->> relations
+                                          (map (fn [[offset object]]
+                                                 {:node (d/entity db object)
+                                                  :cursor (str offset)}))
+                                          (assoc {:hasNextPage (< end-cursor (count names))
+                                                  :endCursor (str end-cursor)
+                                                  :hasPreviousPage (> start-cursor 0)
+                                                  :startCursor (str start-cursor)}
+                                                 :edges))))
 
      ["Query", _] (let [kwid (-> (str field-name "/id")
                                  (str/replace #"_" "-")
