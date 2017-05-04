@@ -1,13 +1,13 @@
 (ns wb-graphql.graphql
   (:require [graphql-clj.parser :as parser]
-            [graphql-clj.type :as type]
             [graphql-clj.resolver :as resolver]
             [graphql-clj.executor :as executor]
-            [graphql-clj.validator :as validator]
+            [graphql-clj.schema-validator :as schema-validator]
             [graphql-clj.introspection :as introspection]
             [clojure.string :as str]
             [clojure.core.match :as match]
             [datomic.api :as d]
+            [taoensso.nippy :as nippy]
             [wb-graphql.db :refer [datomic-conn]]))
 
 
@@ -263,10 +263,6 @@ type Query {
 }
 ")))
 
-(defn parse-schema [& schema-parts]
-  (->> (flatten schema-parts)
-       (str/join "\n")
-       (parser/parse)))
 
 (defn starter-resolver-fn [type-name field-name]
   (let [db (d/db datomic-conn)]
@@ -306,13 +302,39 @@ type Query {
 
 ;; (def introspection-schema introspection/introspection-schema)
 
+(def schema-filename "schema.graphql")
+
+(def serialized-schema-filename "validated-schema")
+
+(defn load-validated-schema []
+  (let [schema-input-stream (->> (clojure.java.io/resource serialized-schema-filename)
+                                 (clojure.java.io/input-stream))]
+    (with-open [out (new java.io.ByteArrayOutputStream)]
+      (clojure.java.io/copy schema-input-stream out)
+      (nippy/thaw (.toByteArray out)))))
+
 (defn create-executor [db]
-  (let [validated-schema
-        (validator/validate-schema
-         (parse-schema starter-type-schema
-                       (generate-type-schema db)
-                       (generate-query-schema db)
-                       starter-schema))
+  (let [validated-schema (load-validated-schema)
         context nil]
     (fn [query variables]
-          (executor/execute context validated-schema starter-resolver-fn query variables))))
+      (executor/execute context validated-schema starter-resolver-fn query variables))))
+
+(defn merge-schema [& schema-parts]
+  (->> (flatten schema-parts)
+       (str/join "\n")))
+
+(defn -main []
+  (let [db (do (mount.core/start)
+               (d/db datomic-conn))
+        raw-schema (merge-schema starter-type-schema
+                                 (generate-type-schema db)
+                                 (generate-query-schema db)
+                                 starter-schema)
+        validated-schema (->> raw-schema
+                              (parser/parse-schema)
+                              (schema-validator/validate-schema))
+        resources-path (partial format "resources/%s")]
+    (do (spit (resources-path schema-filename) raw-schema)
+        (with-open [w (clojure.java.io/output-stream (resources-path serialized-schema-filename))]
+          (.write w (nippy/freeze validated-schema))))
+        (mount.core/stop)))

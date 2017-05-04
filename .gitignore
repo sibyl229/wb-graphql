@@ -24,6 +24,7 @@ pom.xml.asc
 /target/
 /checkouts/
 .lein-deps-sum
+.lein-env
 .lein-repl-history
 .lein-plugins/
 .lein-failures
@@ -33,3 +34,6 @@ pom.xml.asc
 *~
 \#*\#
 .\#*
+
+# not check in binery data needed for jar
+resources/validated-schema
