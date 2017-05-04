@@ -24,6 +24,7 @@ pom.xml.asc
 /target/
 /checkouts/
 .lein-deps-sum
+.lein-env
 .lein-repl-history
 .lein-plugins/
 .lein-failures
