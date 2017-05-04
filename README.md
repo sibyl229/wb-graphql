@@ -96,11 +96,11 @@ TODO...
 
 ### Start server
 
-    lein ring server-headless
+    lein ring server-headless [YOUR_PORT_NO]
 
 ### Access graphiql from
 
-    http://localhost:3002/index.html
+    http://localhost:[YOUR_PORT_NO]/index.html
 
 ### Acknowledgement
 
