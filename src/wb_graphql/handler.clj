@@ -1,6 +1,6 @@
 (ns wb-graphql.handler
   (:require [cheshire.core :as json]
-            [compojure.core :refer [GET POST routes]]
+            [compojure.core :refer [GET POST routes context]]
             [compojure.route :as route]
             [datomic.api :as d]
             [mount.core :as mount]
@@ -12,8 +12,9 @@
             [wb-graphql.db :refer [datomic-conn]]
             [wb-graphql.graphql :as graphql]))
 
-(defn create-routes [graphql-executor]
-  (routes
+(defn create-routes [graphql-executor path-prefix]
+  (context
+   (clojure.string/replace path-prefix #"\/$" "") []
    (GET "/" [schema query variables :as request]
         (if (= (:content-type request) "application/json")
           (do (println "GET query: " query)
@@ -39,7 +40,7 @@
   (mount/stop))
 
 (defn app [request]
-  (let [handler (-> (create-routes graphql-executor)
+  (let [handler (-> (create-routes graphql-executor "")
                     (wrap-json-response)
                     (wrap-cors :access-control-allow-origin [#"http://localhost:8080" #"http://.*"]
                                :access-control-allow-methods [:get :put :post :delete])

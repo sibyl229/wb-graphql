@@ -8,7 +8,7 @@ class App extends Component {
   graphQLFetcher(graphQLParams) {
     const urlPath = window.location.pathname;
     const graphqlPath = (urlPath.replace(/\/index.html$/, "") || "/");
-    console.log(graphqlPath);
+
     return fetch(graphqlPath, {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
