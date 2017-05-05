@@ -14,14 +14,13 @@
 
 (defn create-routes [graphql-executor]
   (routes
-   (GET "/" [] "<h1>Hello World</h1>")
-   (GET "/graphql" [schema query variables :as request]
+   (GET "/" [schema query variables :as request]
         (if (= (:content-type request) "application/json")
           (do (println "GET query: " query)
               (response/response
                (graphql-executor query variables)))
           (response/redirect "/index.html" 301)))
-   (POST "/graphql" [schema query variables :as request]
+   (POST "/" [schema query variables :as request]
          (println "POST query: " query)
          ;; (println "Post variables: " (json/parse-string variables))
          (response/response
