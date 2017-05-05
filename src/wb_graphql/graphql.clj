@@ -230,15 +230,13 @@ type %sConnection {
            [?e :pace/use-ns ?inf]]
          db))
 
-(defn x [ident]
-  (let [db (d/db datomic-conn)]
-    (d/q '[:find (pull ?e [*])
-           :in $ ?ident
-           :where
-           [?e :db/ident ?ident]
-           (not [_ :db.install/attribute ?e])
-           ]
-         db ident)))
+(defn x [db ident]
+  (d/q '[:find (pull ?e [*])
+         :in $ ?ident
+         :where
+         [?e :db/ident ?ident]
+         (not [_ :db.install/attribute ?e])]
+       db ident))
 
 (defn generate-type-schema [db]
   (let [ts (type-names db)]
@@ -266,8 +264,8 @@ type Query {
 ")))
 
 
-(defn starter-resolver-fn [type-name field-name]
-  (let [db (d/db datomic-conn)]
+(defn starter-resolver-factory [db]
+  (fn [type-name field-name]
     (match/match
      [type-name field-name]
      ["Query" "getGenesByNames"] (fn [context parent args]
@@ -331,7 +329,11 @@ type Query {
   (let [validated-schema (load-validated-schema)
         context nil]
     (fn [query variables]
-      (executor/execute context validated-schema starter-resolver-fn query variables))))
+      (executor/execute context
+                        validated-schema
+                        (starter-resolver-factory db)
+                        query
+                        variables))))
 
 (defn merge-schema [& schema-parts]
   (->> (flatten schema-parts)
