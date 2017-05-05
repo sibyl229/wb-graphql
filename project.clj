@@ -35,6 +35,7 @@
          :destroy wb-graphql.handler/destroy
          :auto-reload? true
          :host "0.0.0.0"}
+  :repositories [["tmp" "file:///tmp/clojure_jars"]]
   :javac-options ["-target" "1.8" "-source" "1.8"]
   :jvm-opts ["-Xmx6G"
              ;; same GC options as the transactor,
