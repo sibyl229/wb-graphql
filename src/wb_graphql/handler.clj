@@ -18,14 +18,14 @@
         (if (= (:content-type request) "application/json")
           (do (println "GET query: " query)
               (response/response
-               ((graphql/create-executor (:db request)) query variables)))
+               ((graphql/get-executor (:db request)) query variables)))
           (response/redirect "/index.html" 301)))
    (POST "/" [schema query variables :as request]
          (println "POST query: " query)
          ;; (println "Post variables: " (json/parse-string variables))
          (response/response
           (try
-            ((graphql/create-executor (:db request)) query (json/parse-string variables))
+            ((graphql/get-executor (:db request)) query (json/parse-string variables))
             (catch Throwable e
               (println e)))))
    (route/resources "/" {:root ""})

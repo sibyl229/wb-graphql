@@ -336,6 +336,8 @@ type Query {
                         query
                         variables))))
 
+(def get-executor (memoize create-executor))
+
 (defn merge-schema [& schema-parts]
   (->> (flatten schema-parts)
        (str/join "\n")))
