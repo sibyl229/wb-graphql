@@ -327,11 +327,12 @@ type Query {
 
 (defn create-executor [db]
   (let [validated-schema (load-validated-schema)
+        starter-resolver-fn (starter-resolver-factory db)
         context nil]
     (fn [query variables]
       (executor/execute context
                         validated-schema
-                        (starter-resolver-factory db)
+                        starter-resolver-fn
                         query
                         variables))))
 

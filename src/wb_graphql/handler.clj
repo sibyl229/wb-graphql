@@ -12,38 +12,48 @@
             [wb-graphql.db :refer [datomic-conn]]
             [wb-graphql.graphql :as graphql]))
 
-(defn create-routes [graphql-executor path-prefix]
-  (context
-   (clojure.string/replace path-prefix #"\/$" "") []
+(defn create-routes []
+  (routes
    (GET "/" [schema query variables :as request]
         (if (= (:content-type request) "application/json")
           (do (println "GET query: " query)
               (response/response
-               (graphql-executor query variables)))
+               ((graphql/create-executor (:db request)) query variables)))
           (response/redirect "/index.html" 301)))
    (POST "/" [schema query variables :as request]
          (println "POST query: " query)
          ;; (println "Post variables: " (json/parse-string variables))
          (response/response
           (try
-            (graphql-executor query (json/parse-string variables))
+            ((graphql/create-executor (:db request)) query (json/parse-string variables))
             (catch Throwable e
               (println e)))))
    (route/resources "/" {:root ""})
    (route/not-found "<h1>Page not found</h1>")))
 
+(defn wrap-db [handler db]
+  (fn [request]
+    (handler (assoc request :db db))))
+
+(defn wrap-app [handler db]
+  (fn [request]
+    (let [wrapped-app
+          (-> handler
+              (wrap-db db)
+              (wrap-json-response)
+              (wrap-cors :access-control-allow-origin [#"http://localhost:8080" #"http://.*"]
+                         :access-control-allow-methods [:get :put :post :delete])
+              (wrap-defaults api-defaults)
+              (wrap-json-params))]
+      (wrapped-app request))))
+
 (defn init []
-  (mount/start)
-  (def graphql-executor (graphql/create-executor (d/db datomic-conn))))
+  (mount/start))
 
 (defn destroy []
   (mount/stop))
 
 (defn app [request]
-  (let [handler (-> (create-routes graphql-executor "")
-                    (wrap-json-response)
-                    (wrap-cors :access-control-allow-origin [#"http://localhost:8080" #"http://.*"]
-                               :access-control-allow-methods [:get :put :post :delete])
-                    (wrap-defaults api-defaults)
-                    (wrap-json-params))]
+  (let [handler (-> (create-routes)
+                    (wrap-app (d/db datomic-conn)))]
     (handler request)))
