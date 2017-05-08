@@ -19,7 +19,10 @@
           (do (println "GET query: " query)
               (response/response
                ((graphql/get-executor (:db request)) query variables)))
-          (response/redirect "/index.html" 301)))
+          (response/redirect (-> (:uri request)
+                                 (clojure.string/replace #"\/$" "")
+                                 (str "/index.html"))
+                             301)))
    (POST "/" [schema query variables :as request]
          (println "POST query: " query)
          ;; (println "Post variables: " (json/parse-string variables))
