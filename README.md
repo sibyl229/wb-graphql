@@ -114,7 +114,7 @@ Create a ring handler with wb-graphql
 
 ## Run wb-graphql as a standalone web service
 
-Locate the standlone uberjar, or refer [here to build a standalone uberjar](#Build standalone uberjar).
+Locate the standlone uberjar, or refer [here to build a standalone uberjar](#build-standalone-uberjar).
 
     jar -jar path/to/standalone-uberjar.jar
 
