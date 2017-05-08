@@ -15,19 +15,27 @@
                  [graphql-clj "0.2.2" :exclusions [org.clojure/clojure]]
                  [clojure-future-spec "1.9.0-alpha13"]
                  [mount "0.1.11"]
-                 [environ "1.1.0"]
-                 [com.datomic/datomic-pro "0.9.5554"
-                  :exclusions [joda-time]]
-                 [com.amazonaws/aws-java-sdk-dynamodb "1.11.6"
-                  :exclusions [joda-time]]]
+                 [environ "1.1.0"]]
   :main ^:skip-aot wb-graphql.graphql
   :target-path "target/%s"
   :resource-paths ["resources" "build"]
-  :profiles {:uberjar {:aot :all}
-             :dev {; :ring {:stacktrace-middleware prone.middleware/wrap-exceptions}  ; http://localhost:3000/prone/latest
-                   :resource-paths ["resources" "build"]
-                   :dependencies [[prone "1.1.1"]]
-                   :env {:wb-db-uri "datomic:ddb://us-east-1/WS258/wormbase"}}}
+  :profiles
+  {:datomic-free
+   {:dependencies [[com.datomic/datomic-free "0.9.5554"
+                    :exclusions [joda-time]]]}
+
+   :datomic-pro
+   {:dependencies [[com.datomic/datomic-pro "0.9.5554"
+                    :exclusions [joda-time]]
+                   [com.amazonaws/aws-java-sdk-dynamodb "1.11.6"
+                    :exclusions [joda-time]]]}
+
+   :dev [:datomic-pro
+         {; :ring {:stacktrace-middleware prone.middleware/wrap-exceptions}  ; http://localhost:3000/prone/latest
+          :resource-paths ["resources" "build"]
+          :dependencies [[prone "1.1.1"]]
+          :env {:wb-db-uri "datomic:ddb://us-east-1/WS258/wormbase"}}]
+   :uberjar [:datomic-pro {:aot :all}]}
   :plugins [[lein-environ "1.1.0"]
             [lein-ring "0.11.0"]]
   :ring {:handler wb-graphql.handler/app
