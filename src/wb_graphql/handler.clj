@@ -5,6 +5,7 @@
             [datomic.api :as d]
             [mount.core :as mount]
             [ring.util.response :as response]
+            [ring.middleware.accept :refer [wrap-accept]]
             [ring.middleware.json :refer [wrap-json-response]]
             [ring.middleware.json :refer [wrap-json-params]]
             [ring.middleware.cors :refer [wrap-cors]]
@@ -15,14 +16,17 @@
 (defn create-routes []
   (routes
    (GET "/" [schema query variables :as request]
-        (if (= (:content-type request) "application/json")
-          (do (println "GET query: " query)
-              (response/response
-               ((graphql/get-executor (:db request)) query variables)))
-          (response/redirect (-> (:uri request)
-                                 (clojure.string/replace #"\/$" "")
-                                 (str "/index.html"))
-                             301)))
+        (let [accept-format (->> request
+                                 :accept
+                                 :mime)]
+          (if (= accept-format "text/html")
+            (response/redirect (-> (:uri request)
+                                   (clojure.string/replace #"\/$" "")
+                                   (str "/index.html"))
+                               301)
+            (do (println "GET query: " query)
+                (response/response
+                 ((graphql/get-executor (:db request)) query variables))))))
    (POST "/" [schema query variables :as request]
          (println "POST query: " query)
          ;; (println "Post variables: " (json/parse-string variables))
@@ -47,7 +51,8 @@
               (wrap-cors :access-control-allow-origin [#"http://localhost:8080" #"http://.*"]
                          :access-control-allow-methods [:get :put :post :delete])
               (wrap-defaults api-defaults)
-              (wrap-json-params))]
+              (wrap-json-params)
+              (wrap-accept {:mime ["text/html" "application/json"]}))]
       (wrapped-app request))))
 
 (defn init []
