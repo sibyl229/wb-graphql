@@ -1,11 +1,13 @@
 ### Introduction
 The GraphQL API and IDE for WormBase data in Datomic database.
 
-## Get started
 Here is a web tool I made for exploring data in our Datomic database, and fetching just the fields you need on any entity/object. All of these through the website or its web API. This tool implements the GraphQL API standard, which is designed for ease of data exchange over the web.
 
 So far, I made this tool to work with two types of queries (or access point), one is to get a list of genes based on a list of gene names, the other is to get any entity by its WormBase ID. Within each query, you will specify which fields you like to fetch, and you will get results that mirror the shape of the query.
 
+## Get started
+
+Try it live on WormBase data on [http://52.90.214.72:4003/](http://52.90.214.72:4003/)
 
 #### Sample queries
 
@@ -116,11 +118,11 @@ Create a ring handler with wb-graphql
 
 Locate the standlone uberjar, or refer [here to build a standalone uberjar](#build-standalone-uberjar).
 
-    jar -jar path/to/standalone-uberjar.jar
+    java -jar path/to/standalone-uberjar.jar
 
 Or with appropriate environment variable
 
-    PORT=[Your_Port] WB_DB_URI=[Your_Datomic_URI] jar -jar path/to/standalone-uberjar.jar
+    PORT=[Your_Port] WB_DB_URI=[Your_Datomic_URI] java -jar path/to/standalone-uberjar.jar
 
 ## To contribute
 
