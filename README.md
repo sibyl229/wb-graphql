@@ -83,6 +83,45 @@ N/A at the moment
 > Find out the return value type of your query (refer above), access the docs for the return type, look under "Fields" for all the fields available for fetching on the current object and the data type of the field. Subfields can be fetched through nesting (refer to examples la)
 
 
+## Use wb-graphql as a library
+
+wb-graphql provides ring handlers that can be combined with a ring web service.
+
+Include the following in the your project.clj dependencies:
+
+```clojure
+[wormbase/wb-graphql "0.1.0-SNAPSHOT"]
+[com.datomic/datomic-pro "0.9.5554" :exclusions [joda-time]]
+[com.amazonaws/aws-java-sdk-dynamodb "1.11.6" :exclusions [joda-time]]
+
+```
+
+Create a ring handler with wb-graphql
+
+```clojure
+(ns rest-api.routing
+  (:require
+   [datomic.api :as d]
+   [wb-graphql.handler]))
+
+(def db (d/db datomic-conn))
+
+(defn graphql-routes [request]
+  (let [handler (-> (wb-graphql.handler/create-routes)
+                    (wb-graphql.handler/wrap-app db))]
+    (handler request)))
+```
+
+## Run wb-graphql as a standalone web service
+
+Locate the standlone uberjar, or refer [here to build a standalone uberjar](#build-standalone-uberjar).
+
+    jar -jar path/to/standalone-uberjar.jar
+
+Or with appropriate environment variable
+
+    PORT=[Your_Port] WB_DB_URI=[Your_Datomic_URI] jar -jar path/to/standalone-uberjar.jar
+
 ## To contribute
 
 ### Obtain credentials ###
@@ -100,7 +139,25 @@ TODO...
 
 ### Access graphiql from
 
-    http://localhost:[YOUR_PORT_NO]/index.html
+    http://localhost:[YOUR_PORT_NO]
+
+### Build jar
+
+to use as a library
+
+    npm run build    # build static resources
+    lein run    # build graphql schema
+    lein jar    # build jar
+    lein deploy tmp   # deploy to local repository for testing
+
+### Build standalone uberjar
+
+to run as a server
+
+    npm run build    # build static resources
+    lein run    # build graphql schema
+    lein ring uberjar    # build standalone uberjar
+
 
 ### Acknowledgement
 
