@@ -47,7 +47,7 @@
   :repositories [["clojars" {:url "https://clojars.org/repo"
                              :creds :gpg}]
                  ["tmp" "file:///tmp/clojure_jars"]]
-  :deploy-repositories [["releases" "clojars"]]
+  :deploy-repositories [["releases" :clojars]]
   :javac-options ["-target" "1.8" "-source" "1.8"]
   :jvm-opts ["-Xmx6G"
              ;; same GC options as the transactor,
