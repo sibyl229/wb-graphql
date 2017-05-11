@@ -44,7 +44,7 @@
          :destroy wb-graphql.handler/destroy
          :auto-reload? true
          :host "0.0.0.0"}
-  :repositories [["clojars" {:url "https://clojars.org/repo"
+  :repositories [["releases" {:url "https://clojars.org/repo"
                              :creds :gpg}]
                  ["tmp" "file:///tmp/clojure_jars"]]
   :deploy-repositories [["releases" "clojars"]]
