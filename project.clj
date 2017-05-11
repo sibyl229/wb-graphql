@@ -1,4 +1,4 @@
-(defproject wormbase/wb-graphql "0.1.0-RC1-SNAPSHOT"
+(defproject wormbase/wb-graphql "0.1.1-SNAPSHOT"
   :description "graphql-clj starter project"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"

@@ -92,7 +92,7 @@ wb-graphql provides ring handlers that can be combined with a ring web service.
 Include the following in the your project.clj dependencies:
 
 ```clojure
-[wormbase/wb-graphql "0.1.0-SNAPSHOT"]
+[wormbase/wb-graphql "0.1.0"]
 [com.datomic/datomic-pro "0.9.5554" :exclusions [joda-time]]
 [com.amazonaws/aws-java-sdk-dynamodb "1.11.6" :exclusions [joda-time]]
 
