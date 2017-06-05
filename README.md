@@ -1,13 +1,9 @@
-### Introduction
-The GraphQL API and IDE for WormBase data in Datomic database.
 
-Here is a web tool I made for exploring data in our Datomic database, and fetching just the fields you need on any entity/object. All of these through the website or its web API. This tool implements the GraphQL API standard, which is designed for ease of data exchange over the web.
+**The GraphQL API and IDE for WormBase data in Datomic database.**
 
-So far, I made this tool to work with two types of queries (or access point), one is to get a list of genes based on a list of gene names, the other is to get any entity by its WormBase ID. Within each query, you will specify which fields you like to fetch, and you will get results that mirror the shape of the query.
+**Try it live at [http://52.90.214.72:4003/](http://52.90.214.72:4003/)**
 
 ## Get started
-
-Try it live on WormBase data on [http://52.90.214.72:4003/](http://52.90.214.72:4003/)
 
 #### Sample queries
 
@@ -70,6 +66,13 @@ query {
 #### Sample mutations
 
 N/A at the moment
+
+
+### Overview
+
+This is a web tool I made for exploring data in our Datomic database, and fetching just the fields you need on any entity/object. All of these through the website or its web API. This tool implements the GraphQL API standard, which is designed for ease of data exchange over the web.
+
+So far, I made this tool to work with two types of queries (or access point), one is to get a list of genes based on a list of gene names, the other is to get any entity by its WormBase ID. Within each query, you will specify which fields you like to fetch, and you will get results that mirror the shape of the query.
 
 ### FAQ and tips
 * Dontrol-space will open up auto-completion. This is useful for composing a GraphQL query.
