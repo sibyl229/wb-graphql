@@ -42,14 +42,22 @@
   (fn [request]
     (handler (assoc request :db db))))
 
+(defn wrap-request-id [handler]
+  (fn [request]
+    (let [response (handler request)
+          x-request-id ((:headers request) "x-request-id")]
+      (assoc-in response [:headers "x-request-id"] x-request-id))))
+
 (defn wrap-app [handler db]
   (fn [request]
     (let [wrapped-app
           (-> handler
               (wrap-db db)
+              (wrap-request-id)
               (wrap-json-response)
               (wrap-cors :access-control-allow-origin [#"http://localhost:8080" #"http://.*"]
-                         :access-control-allow-methods [:get :put :post :delete])
+                         :access-control-allow-methods [:get :put :post :delete]
+                         :access-control-expose-headers ["x-request-id"])
               (wrap-defaults api-defaults)
               (wrap-json-params)
               (wrap-accept {:mime ["text/html" "application/json"]}))]
